@@ -48,15 +48,6 @@ class _LoanPageState extends State<LoanPage> {
     return CupertinoPageScaffold(
         navigationBar: CupertinoNavigationBar(
           middle: Text('Loan'),
-          trailing: IconButton(
-            icon: Icon(
-              CupertinoIcons.add,
-            ),
-            onPressed: () {
-              Navigator.pushNamed(context, '/loanFill',
-                  arguments: {"loanId": "1"});
-            },
-          ),
           leading: IconButton(
             icon: Icon(
               CupertinoIcons.back,

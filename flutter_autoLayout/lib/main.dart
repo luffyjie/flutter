@@ -1,8 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'loan/loanFillPage.dart';
-import 'loan/loanPage.dart';
+import 'loan/loan_fill_page.dart';
+import 'loan/loan_page.dart';
+import 'pay/pay_method_list.dart';
 
 void main() {
   runApp(
@@ -23,7 +24,8 @@ class MyApp extends StatelessWidget {
       home: MyHomePage(),
       routes: {
         '/loan': (BuildContext contenxt) => LoanPage(),
-        '/loanFill': (BuildContext contenxt) => LoanFillPage()
+        '/loan_fill': (BuildContext contenxt) => LoanFillPage(),
+        '/pay_method_List': (BuildContext context) => PayMethodListPage()
       },
       // initialRoute: '/loan',
     );

@@ -28,16 +28,23 @@ class LoanCellPage extends StatelessWidget {
                           fit: BoxFit.cover)),
                 ),
                 Spacer(flex: 1),
-                SizedBox(
-                    width: 76,
-                    height: 26,
-                    child: CupertinoButton(
-                        child: Text('Repay'),
-                        color: Color(0x00A0E9),
-                        onPressed: () {
-                          Navigator.pushNamed(context, '/loanFillPage',
-                              arguments: {"loanId": loanId});
-                        }))
+                Container(
+                  height: 26,
+                  width: 76,
+                  child: ClipRRect(
+                      borderRadius: BorderRadius.circular(22.5),
+                      child: FlatButton(
+                          color: Color(0xFF47A0E3),
+                          child: Text('Repay',
+                              style: TextStyle(
+                                  fontSize: 13,
+                                  fontWeight: FontWeight.normal,
+                                  color: Colors.white)),
+                          onPressed: () {
+                            Navigator.pushNamed(context, '/loan_fill',
+                                arguments: {"loanId": loanId});
+                          })),
+                ),
               ],
             ),
             Expanded(
