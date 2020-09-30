@@ -1,13 +1,14 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter_autoLayout/public.dart';
+import 'package:flutter_autoLayout/themes/theme_data.dart';
 import 'package:flutter_localized_locales/flutter_localized_locales.dart';
-import 'package:flutter_gen/gen_l10n/autolayout_localizations.dart';
-
-import 'gallery/gallery_button.dart';
 import 'loan/loan_fill_page.dart';
 import 'loan/loan_page.dart';
 import 'pay/pay_method_list_page.dart';
-import 'gallery/gallery_banner_page.dart';
+import 'gallery/bottom_app_bar_demo.dart';
+import 'gallery/banner_demo.dart';
+import 'gallery/gallery_button.dart';
+import 'gallery/bottom_navigation_demo.dart';
 
 void main() {
   runApp(MyApp());
@@ -18,14 +19,22 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         title: "Flutter_AutoLayout",
-        theme: ThemeData(primaryColor: Colors.white),
+        debugShowCheckedModeBanner: false,
+        themeMode: ThemeMode.system,
+        theme: AutolayoutThemeData.lightThemeData,
+        darkTheme: AutolayoutThemeData.darkThemeData,
         home: MyHomePage(),
         routes: {
           '/loan': (BuildContext contenxt) => LoanPage(),
           '/loan_fill': (BuildContext contenxt) => LoanFillPage(),
           '/pay_method_List': (BuildContext context) => PayMethodListPage(),
           // demo
-          '/gallery_banner': (BuildContext context) => BannerDemo(),
+          '/banner_demo': (BuildContext context) => BannerDemo(),
+          '/bottomappbar_demo': (BuildContext context) => BottomAppBarDemo(),
+          '/bottomnavigation_demo': (BuildContext context) =>
+              BotttomNavigationDemo(
+                type: BottomNavigationDemoType.withoutLabels,
+              ),
         },
         localizationsDelegates: const [
           ...AutolayoutLocalizations.localizationsDelegates,
@@ -73,12 +82,30 @@ class _MyHomePageSatate extends State<MyHomePage> {
                       Navigator.pushNamed(context, '/loan');
                     }),
               ),
-              Row(
+              Padding(
+                  padding: const EdgeInsets.all(8),
+                  child: Text(
+                    'Gallery demo',
+                    style: TextStyle(color: Colors.black),
+                  )),
+              Wrap(
+                spacing: 8,
+                runSpacing: 4,
                 children: [
                   GalleryButton(
                       name: "Banner",
                       onPressed: () {
-                        Navigator.pushNamed(context, '/gallery_banner');
+                        Navigator.pushNamed(context, '/banner_demo');
+                      }),
+                  GalleryButton(
+                      name: "Bottom app Bar",
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/bottomappbar_demo');
+                      }),
+                  GalleryButton(
+                      name: "Bottom navigation",
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/bottomnavigation_demo');
                       }),
                 ],
               ),

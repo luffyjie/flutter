@@ -1,5 +1,4 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter_autoLayout/public.dart';
 
 class GalleryButton extends StatelessWidget {
   final String name;
@@ -15,7 +14,7 @@ class GalleryButton extends StatelessWidget {
                 fontSize: 15,
                 fontWeight: FontWeight.normal,
                 color: Colors.white)),
-        color: Color(0xFF47A0E3),
+        color: Color(0xEC17BFEF),
         onPressed: onPressed);
   }
 }

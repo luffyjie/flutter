@@ -1,8 +1,7 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_autoLayout/public.dart';
+import 'package:flutter/cupertino.dart';
 
-class PayMethodListPage extends BasicPage {
+class PayMethodListPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
