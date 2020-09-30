@@ -5,7 +5,7 @@ import '../widget/submit_button.dart';
 class LoanFillPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new CupertinoPageScaffold(
+    return CupertinoPageScaffold(
         navigationBar: CupertinoNavigationBar(
           middle: Text('Loan'),
           leading: IconButton(
@@ -17,8 +17,9 @@ class LoanFillPage extends StatelessWidget {
             },
           ),
         ),
-        child: SafeArea(
-            child: Column(
+        child: Scaffold(
+            body: SafeArea(
+                child: Column(
           children: [
             Expanded(
               flex: 1,
@@ -55,6 +56,6 @@ class LoanFillPage extends StatelessWidget {
               ],
             )
           ],
-        )));
+        ))));
   }
 }

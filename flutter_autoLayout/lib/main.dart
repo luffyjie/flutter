@@ -1,34 +1,43 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_localized_locales/flutter_localized_locales.dart';
+import 'package:flutter_gen/gen_l10n/autolayout_localizations.dart';
 
+import 'gallery/gallery_button.dart';
 import 'loan/loan_fill_page.dart';
 import 'loan/loan_page.dart';
-import 'pay/pay_method_list.dart';
+import 'pay/pay_method_list_page.dart';
+import 'gallery/gallery_banner_page.dart';
 
 void main() {
-  runApp(
-    MaterialApp(
-      title: "AutoLayout",
-      home: Scaffold(
-        body: MyApp(),
-      ),
-    ),
-  );
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(primaryColor: Colors.white),
-      home: MyHomePage(),
-      routes: {
-        '/loan': (BuildContext contenxt) => LoanPage(),
-        '/loan_fill': (BuildContext contenxt) => LoanFillPage(),
-        '/pay_method_List': (BuildContext context) => PayMethodListPage()
-      },
-      // initialRoute: '/loan',
-    );
+        title: "Flutter_AutoLayout",
+        theme: ThemeData(primaryColor: Colors.white),
+        home: MyHomePage(),
+        routes: {
+          '/loan': (BuildContext contenxt) => LoanPage(),
+          '/loan_fill': (BuildContext contenxt) => LoanFillPage(),
+          '/pay_method_List': (BuildContext context) => PayMethodListPage(),
+          // demo
+          '/gallery_banner': (BuildContext context) => BannerDemo(),
+        },
+        localizationsDelegates: const [
+          ...AutolayoutLocalizations.localizationsDelegates,
+          LocaleNamesLocalizationsDelegate()
+        ],
+        // locale: const Locale('zh', 'en'),
+        supportedLocales: AutolayoutLocalizations.supportedLocales,
+        localeResolutionCallback: (locale, supportedLocales) {
+          return locale;
+        }
+        // initialRoute: '/loan',
+        );
   }
 }
 
@@ -46,11 +55,13 @@ class _MyHomePageSatate extends State<MyHomePage> {
         ),
         body: SafeArea(
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
                 alignment: Alignment.center,
                 color: Colors.amber,
-                child: CupertinoButton(
+                child: FlatButton(
+                    color: Colors.deepOrange,
                     child: Text(
                       'Next',
                       style: TextStyle(
@@ -62,14 +73,27 @@ class _MyHomePageSatate extends State<MyHomePage> {
                       Navigator.pushNamed(context, '/loan');
                     }),
               ),
-              Container(
-                margin: const EdgeInsets.all(10),
-                padding: const EdgeInsets.all(20),
-                color: Colors.green,
-                width: 100,
-                height: 100,
-                child: Image.asset('assets/images/calamares.jpg',
-                    fit: BoxFit.contain),
+              Row(
+                children: [
+                  GalleryButton(
+                      name: "Banner",
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/gallery_banner');
+                      }),
+                ],
+              ),
+              Row(
+                children: [
+                  Container(
+                    margin: const EdgeInsets.all(5),
+                    padding: const EdgeInsets.all(10),
+                    color: Colors.green,
+                    width: 50,
+                    height: 50,
+                    child: Image.asset('assets/images/calamares.jpg',
+                        fit: BoxFit.contain),
+                  ),
+                ],
               ),
               Row(
                 children: [
@@ -89,8 +113,8 @@ class _MyHomePageSatate extends State<MyHomePage> {
                   ),
                   Icon(Icons.star, color: Colors.red[500]),
                   Container(
-                    width: 100,
-                    height: 100,
+                    width: 150,
+                    height: 50,
                     color: Colors.black,
                     alignment: Alignment.center,
                     child: Text(
@@ -105,21 +129,6 @@ class _MyHomePageSatate extends State<MyHomePage> {
                   color: Colors.amber,
                   child: Text("Hello World"),
                 ),
-              ),
-              Container(
-                constraints: BoxConstraints.expand(
-                  height: Theme.of(context).textTheme.bodyText1.fontSize * 1.1 +
-                      100.0,
-                ),
-                padding: const EdgeInsets.all(8.0),
-                color: Colors.blue[600],
-                alignment: Alignment.center,
-                child: Text('Hello World',
-                    style: Theme.of(context)
-                        .textTheme
-                        .bodyText1
-                        .copyWith(color: Colors.white)),
-                transform: Matrix4.rotationZ(0.1),
               ),
               Expanded(
                 flex: 1,

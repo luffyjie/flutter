@@ -57,8 +57,9 @@ class _LoanPageState extends State<LoanPage> {
             },
           ),
         ),
-        child: SafeArea(
-            child: Column(children: [
+        child: Scaffold(
+            body: SafeArea(
+                child: Column(children: [
           SizedBox(
             height: 25,
             width: 19,
@@ -94,6 +95,6 @@ class _LoanPageState extends State<LoanPage> {
                         loanId: fi["tid"],
                         loanSubStr: fi["subStr"]);
                   }))
-        ])));
+        ]))));
   }
 }
