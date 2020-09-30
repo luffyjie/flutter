@@ -15,20 +15,30 @@ class AutolayoutThemeData {
   static ThemeData themeData(ColorScheme colorScheme, Color focusColor) {
     return ThemeData(
       colorScheme: colorScheme,
-      textTheme: _textTheme,
-      // Matches manifest.json colors and background color.
-      primaryColor: const Color(0xFF030303),
       appBarTheme: AppBarTheme(
         textTheme: _textTheme.apply(bodyColor: colorScheme.onPrimary),
-        color: colorScheme.background,
+        color: colorScheme.primary,
         elevation: 0,
-        iconTheme: IconThemeData(color: colorScheme.primary),
+        iconTheme: IconThemeData(color: colorScheme.onPrimary),
         brightness: colorScheme.brightness,
+        centerTitle: true,
+      ),
+      bottomAppBarTheme: BottomAppBarTheme(
+        color: colorScheme.primary,
+      ),
+      buttonTheme: ButtonThemeData(
+        textTheme: ButtonTextTheme.primary,
+        colorScheme: colorScheme,
       ),
       iconTheme: IconThemeData(color: colorScheme.onPrimary),
+      textTheme: _textTheme,
+      primaryColor: colorScheme.primary,
+      backgroundColor: Colors.white,
       canvasColor: colorScheme.background,
+      toggleableActiveColor: colorScheme.primary,
       scaffoldBackgroundColor: colorScheme.background,
       highlightColor: Colors.transparent,
+      indicatorColor: colorScheme.onPrimary,
       accentColor: colorScheme.primary,
       focusColor: focusColor,
       snackBarTheme: SnackBarThemeData(
@@ -43,18 +53,18 @@ class AutolayoutThemeData {
   }
 
   static const ColorScheme lightColorScheme = ColorScheme(
-    primary: Color(0xFFB93C5D),
-    primaryVariant: Color(0xFF117378),
-    secondary: Color(0xFFEFF3F3),
-    secondaryVariant: Color(0xFFFAFBFB),
-    background: Color(0xFFE6EBEB),
-    surface: Color(0xFFFAFBFB),
-    onBackground: Colors.white,
+    primary: Color(0xFF6200EE),
+    primaryVariant: Color(0xFF6200EE),
+    secondary: Color(0xFFFF5722),
+    secondaryVariant: Color(0xFFFF5722),
+    background: Colors.white,
+    surface: Color(0xFFF2F2F2),
+    onBackground: Colors.black,
     error: _lightFillColor,
     onError: _lightFillColor,
-    onPrimary: _lightFillColor,
-    onSecondary: Color(0xFF322942),
-    onSurface: Color(0xFF241E30),
+    onSurface: Colors.black,
+    onPrimary: Colors.white,
+    onSecondary: Colors.white,
     brightness: Brightness.light,
   );
 
@@ -65,12 +75,12 @@ class AutolayoutThemeData {
     secondaryVariant: Color(0xFF451B6F),
     background: Color(0xFF241E30),
     surface: Color(0xFF1F1929),
-    onBackground: Color(0x0DFFFFFF), // White with 0.05 opacity
     error: _darkFillColor,
     onError: _darkFillColor,
     onPrimary: _darkFillColor,
     onSecondary: _darkFillColor,
     onSurface: _darkFillColor,
+    onBackground: Color(0x0DFFFFFF), // White with 0.05 opacity
     brightness: Brightness.dark,
   );
 

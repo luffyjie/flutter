@@ -64,7 +64,6 @@ class _BotttomNavigationDemoState extends State<BotttomNavigationDemo> {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         title: Text(_title(context)),
-        backgroundColor: Theme.of(context).colorScheme.primary,
         centerTitle: true,
       ),
       body: Center(

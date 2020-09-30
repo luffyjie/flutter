@@ -9,6 +9,7 @@ import 'gallery/bottom_app_bar_demo.dart';
 import 'gallery/banner_demo.dart';
 import 'gallery/gallery_button.dart';
 import 'gallery/bottom_navigation_demo.dart';
+import 'gallery/bottom_sheet_demo.dart';
 
 void main() {
   runApp(MyApp());
@@ -33,7 +34,10 @@ class MyApp extends StatelessWidget {
           '/bottomappbar_demo': (BuildContext context) => BottomAppBarDemo(),
           '/bottomnavigation_demo': (BuildContext context) =>
               BotttomNavigationDemo(
-                type: BottomNavigationDemoType.withoutLabels,
+                type: BottomNavigationDemoType.withLables,
+              ),
+          '/bottom_sheet_demo': (BuildContext context) => BottomSheetDemo(
+                type: BottomSheetDemoType.modal,
               ),
         },
         localizationsDelegates: const [
@@ -106,6 +110,11 @@ class _MyHomePageSatate extends State<MyHomePage> {
                       name: "Bottom navigation",
                       onPressed: () {
                         Navigator.pushNamed(context, '/bottomnavigation_demo');
+                      }),
+                  GalleryButton(
+                      name: "Bottom sheet",
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/bottom_sheet_demo');
                       }),
                 ],
               ),

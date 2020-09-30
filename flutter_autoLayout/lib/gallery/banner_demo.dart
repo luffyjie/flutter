@@ -74,7 +74,6 @@ class _BannerDemoState extends State<BannerDemo> {
     return Scaffold(
         appBar: AppBar(
           title: Text(AutolayoutLocalizations.of(context).demoBannerTitle),
-          centerTitle: true,
           actions: [
             PopupMenuButton<BannerDemoAction>(
               onSelected: handleDemoAction,

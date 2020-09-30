@@ -35,8 +35,6 @@ class _BottomAppBarDemoSate extends State<BottomAppBarDemo> {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        centerTitle: true,
-        backgroundColor: Theme.of(context).colorScheme.primary,
         title: Text(AutolayoutLocalizations.of(context).demoBottomAppBarTitle),
       ),
       body: ListView(
@@ -120,27 +118,30 @@ class _DemBottomAppBar extends StatelessWidget {
             child: Row(
               children: [
                 IconButton(
-                    tooltip:
-                        MaterialLocalizations.of(context).openAppDrawerTooltip,
-                    icon: const Icon(Icons.menu),
-                    onPressed: () {
-                      print('Menu button pressed');
-                    }),
+                  tooltip:
+                      MaterialLocalizations.of(context).openAppDrawerTooltip,
+                  icon: const Icon(Icons.menu),
+                  onPressed: () {
+                    print('Menu button pressed');
+                  },
+                ),
                 if (centerLocation.contains(fabLocation)) const Spacer(),
                 IconButton(
-                    tooltip: AutolayoutLocalizations.of(context)
-                        .starterAppTooltipSearch,
-                    icon: const Icon(Icons.search),
-                    onPressed: () {
-                      print('Search button pressed');
-                    }),
+                  tooltip: AutolayoutLocalizations.of(context)
+                      .starterAppTooltipSearch,
+                  icon: const Icon(Icons.search),
+                  onPressed: () {
+                    print('Search button pressed');
+                  },
+                ),
                 IconButton(
-                    tooltip: AutolayoutLocalizations.of(context)
-                        .starterAppTooltipFavorite,
-                    icon: const Icon(Icons.menu),
-                    onPressed: () {
-                      print('Favorite button pressed');
-                    }),
+                  tooltip: AutolayoutLocalizations.of(context)
+                      .starterAppTooltipFavorite,
+                  icon: const Icon(Icons.menu),
+                  onPressed: () {
+                    print('Favorite button pressed');
+                  },
+                ),
               ],
             )));
   }
