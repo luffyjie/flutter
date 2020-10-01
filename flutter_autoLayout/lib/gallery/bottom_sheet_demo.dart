@@ -139,9 +139,12 @@ class _PersistentBottomSheetDemoState
     });
 
     Scaffold.of(context)
-        .showBottomSheet((context) {
-          return _BottomSheetContent();
-        }, elevation: 25)
+        .showBottomSheet(
+          (context) {
+            return _BottomSheetContent();
+          },
+          elevation: 2,
+        )
         .closed
         .whenComplete(() {
           if (mounted) {

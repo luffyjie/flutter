@@ -1,15 +1,10 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_autoLayout/public.dart';
 import 'package:flutter_autoLayout/themes/theme_data.dart';
 import 'package:flutter_localized_locales/flutter_localized_locales.dart';
+import 'public.dart';
+import 'gallery_public.dart';
 import 'loan/loan_fill_page.dart';
 import 'loan/loan_page.dart';
-import 'pay/pay_method_list_page.dart';
-import 'gallery/bottom_app_bar_demo.dart';
-import 'gallery/banner_demo.dart';
-import 'gallery/gallery_button.dart';
-import 'gallery/bottom_navigation_demo.dart';
-import 'gallery/bottom_sheet_demo.dart';
 
 void main() {
   runApp(MyApp());
@@ -39,6 +34,7 @@ class MyApp extends StatelessWidget {
           '/bottom_sheet_demo': (BuildContext context) => BottomSheetDemo(
                 type: BottomSheetDemoType.modal,
               ),
+          '/button_demo': (BuildContext context) => ButtonDemo(),
         },
         localizationsDelegates: const [
           ...AutolayoutLocalizations.localizationsDelegates,
@@ -115,6 +111,11 @@ class _MyHomePageSatate extends State<MyHomePage> {
                       name: "Bottom sheet",
                       onPressed: () {
                         Navigator.pushNamed(context, '/bottom_sheet_demo');
+                      }),
+                  GalleryButton(
+                      name: "Button demo",
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/button_demo');
                       }),
                 ],
               ),
