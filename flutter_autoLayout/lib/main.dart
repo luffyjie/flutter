@@ -35,6 +35,7 @@ class MyApp extends StatelessWidget {
                 type: BottomSheetDemoType.modal,
               ),
           '/button_demo': (BuildContext context) => ButtonDemo(),
+          '/cards_demo': (BuildContext context) => CardsDemo(),
         },
         localizationsDelegates: const [
           ...AutolayoutLocalizations.localizationsDelegates,
@@ -117,6 +118,12 @@ class _MyHomePageSatate extends State<MyHomePage> {
                       onPressed: () {
                         Navigator.pushNamed(context, '/button_demo');
                       }),
+                  GalleryButton(
+                    name: "Cards demo",
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/cards_demo');
+                    },
+                  ),
                 ],
               ),
               Row(

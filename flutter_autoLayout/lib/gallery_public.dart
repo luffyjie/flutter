@@ -8,3 +8,4 @@ export 'gallery/gallery_button.dart';
 export 'gallery/bottom_navigation_demo.dart';
 export 'gallery/bottom_sheet_demo.dart';
 export 'gallery/button_demo.dart';
+export 'gallery/cards_demo.dart';
