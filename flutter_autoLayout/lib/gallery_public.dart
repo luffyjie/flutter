@@ -9,3 +9,5 @@ export 'gallery/bottom_navigation_demo.dart';
 export 'gallery/bottom_sheet_demo.dart';
 export 'gallery/button_demo.dart';
 export 'gallery/cards_demo.dart';
+export 'gallery/chip_demo.dart';
+export 'gallery/data_table_demo.dart';

@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_autoLayout/service/autolayout_options.dart';
 import 'package:flutter_autoLayout/themes/theme_data.dart';
 import 'package:flutter_localized_locales/flutter_localized_locales.dart';
 import 'public.dart';
@@ -14,40 +15,45 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: "Flutter_AutoLayout",
-        debugShowCheckedModeBanner: false,
-        themeMode: ThemeMode.system,
-        theme: AutolayoutThemeData.lightThemeData,
-        darkTheme: AutolayoutThemeData.darkThemeData,
-        home: MyHomePage(),
-        routes: {
-          '/loan': (BuildContext contenxt) => LoanPage(),
-          '/loan_fill': (BuildContext contenxt) => LoanFillPage(),
-          '/pay_method_List': (BuildContext context) => PayMethodListPage(),
-          // demo
-          '/banner_demo': (BuildContext context) => BannerDemo(),
-          '/bottomappbar_demo': (BuildContext context) => BottomAppBarDemo(),
-          '/bottomnavigation_demo': (BuildContext context) =>
-              BotttomNavigationDemo(
-                type: BottomNavigationDemoType.withLables,
-              ),
-          '/bottom_sheet_demo': (BuildContext context) => BottomSheetDemo(
-                type: BottomSheetDemoType.modal,
-              ),
-          '/button_demo': (BuildContext context) => ButtonDemo(),
-          '/cards_demo': (BuildContext context) => CardsDemo(),
-        },
-        localizationsDelegates: const [
-          ...AutolayoutLocalizations.localizationsDelegates,
-          LocaleNamesLocalizationsDelegate()
-        ],
-        // locale: const Locale('zh', 'en'),
-        supportedLocales: AutolayoutLocalizations.supportedLocales,
-        localeResolutionCallback: (locale, supportedLocales) {
-          return locale;
-        }
-        // initialRoute: '/loan',
-        );
+      title: "Flutter_AutoLayout",
+      debugShowCheckedModeBanner: false,
+      themeMode: AutolayoutOptions.of(context).themeMode,
+      theme: AutolayoutThemeData.lightThemeData
+          .copyWith(platform: AutolayoutOptions.of(context).platform),
+      darkTheme: AutolayoutThemeData.darkThemeData,
+      home: MyHomePage(),
+      routes: {
+        '/loan': (BuildContext contenxt) => LoanPage(),
+        '/loan_fill': (BuildContext contenxt) => LoanFillPage(),
+        '/pay_method_List': (BuildContext context) => PayMethodListPage(),
+        // demo
+        '/banner_demo': (BuildContext context) => BannerDemo(),
+        '/bottomappbar_demo': (BuildContext context) => BottomAppBarDemo(),
+        '/bottomnavigation_demo': (BuildContext context) =>
+            BotttomNavigationDemo(
+              type: BottomNavigationDemoType.withLables,
+            ),
+        '/bottom_sheet_demo': (BuildContext context) => BottomSheetDemo(
+              type: BottomSheetDemoType.modal,
+            ),
+        '/button_demo': (BuildContext context) => ButtonDemo(),
+        '/cards_demo': (BuildContext context) => CardsDemo(),
+        '/chip_demo': (BuildContext context) => ChipDemo(),
+        '/data_table_demo': (BuildContext context) => DataTableDemo(),
+      },
+      localizationsDelegates: const [
+        ...AutolayoutLocalizations.localizationsDelegates,
+        LocaleNamesLocalizationsDelegate()
+      ],
+      // locale: const Locale('zh', 'en'),
+      supportedLocales: AutolayoutLocalizations.supportedLocales,
+      locale: AutolayoutOptions.of(context).locale,
+      localeResolutionCallback: (locale, supportedLocales) {
+        deviceLocale = locale;
+        return locale;
+      },
+      // initialRoute: '/loan',
+    );
   }
 }
 
@@ -124,6 +130,18 @@ class _MyHomePageSatate extends State<MyHomePage> {
                       Navigator.pushNamed(context, '/cards_demo');
                     },
                   ),
+                  GalleryButton(
+                    name: "Chip demo",
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/chip_demo');
+                    },
+                  ),
+                  GalleryButton(
+                    name: "Data Table demo",
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/data_table_demo');
+                    },
+                  )
                 ],
               ),
               Row(
