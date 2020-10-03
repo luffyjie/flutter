@@ -7,6 +7,12 @@ This is a very useful demo for you to start learning Flutter! I follow the Googl
 
 You can read my WX article: https://mp.weixin.qq.com/s/IP6dgtZcJLVtYm4BETxajw
 
+# I add gallery demo in this project
+# I add support international languge in this project
+# I add support light/dark theme in this project
+
+This is a very useful, I practice flutter componet and demo code use understand how to make interface.
+
 ScreenShot: 
 https://user-images.githubusercontent.com/4311622/94405937-d6349780-01a3-11eb-96ee-0aafe6dd5c52.jpg
 ScreenShot: 
