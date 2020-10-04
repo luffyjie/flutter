@@ -246,31 +246,32 @@ class _FullScreenDialogDemo extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return MediaQuery.removePadding(
-        context: context,
-        removeBottom: true,
-        child: ApplyTextOptions(
-          child: Scaffold(
-            appBar: AppBar(
-              title: Text(
-                  AutolayoutLocalizations.of(context).dialogFullscreenTitle),
-              actions: [
-                FlatButton(
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                  child: Text(
-                    AutolayoutLocalizations.of(context).dialogFullscreenSave,
-                    style: theme.textTheme.bodyText2
-                        .copyWith(color: theme.colorScheme.onPrimary),
-                  ),
+      context: context,
+      removeBottom: true,
+      child: ApplyTextOptions(
+        child: Scaffold(
+          appBar: AppBar(
+            title:
+                Text(AutolayoutLocalizations.of(context).dialogFullscreenTitle),
+            actions: [
+              FlatButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                child: Text(
+                  AutolayoutLocalizations.of(context).dialogFullscreenSave,
+                  style: theme.textTheme.bodyText2
+                      .copyWith(color: theme.colorScheme.onPrimary),
                 ),
-              ],
-            ),
-            body: Center(
-              child: Text(AutolayoutLocalizations.of(context)
-                  .dialogFullscreenDescription),
-            ),
+              ),
+            ],
           ),
-        ));
+          body: Center(
+            child: Text(AutolayoutLocalizations.of(context)
+                .dialogFullscreenDescription),
+          ),
+        ),
+      ),
+    );
   }
 }

@@ -1,8 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/scheduler.dart';
-import 'package:flutter_autoLayout/gallery/dialog_demo.dart';
-import 'package:flutter_autoLayout/service/autolayout_options.dart';
 import 'package:flutter_autoLayout/themes/theme_data.dart';
 import 'package:flutter_localized_locales/flutter_localized_locales.dart';
 import 'public.dart';
@@ -57,6 +55,9 @@ class MyApp extends StatelessWidget {
               '/chip_demo': (BuildContext context) => ChipDemo(),
               '/data_table_demo': (BuildContext context) => DataTableDemo(),
               '/dialog_demo': (BuildContext context) => DialogDemo(),
+              '/grid_list_demo': (BuildContext context) => GridListDemo(
+                    type: GridListDemoType.header,
+                  ),
             },
             localizationsDelegates: const [
               ...AutolayoutLocalizations.localizationsDelegates,
@@ -166,6 +167,12 @@ class _MyHomePageSatate extends State<MyHomePage> {
                     name: "Dialog demo",
                     onPressed: () {
                       Navigator.pushNamed(context, '/dialog_demo');
+                    },
+                  ),
+                  GalleryButton(
+                    name: "Grid list demo",
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/grid_list_demo');
                     },
                   ),
                 ],

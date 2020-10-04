@@ -139,6 +139,7 @@ class ApplyTextOptions extends StatelessWidget {
       ),
       child: child,
     );
+
     return textDirection == null
         ? widget
         : Directionality(
