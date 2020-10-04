@@ -1,7 +1,8 @@
-import 'package:flutter/services.dart';
 import 'package:flutter_autoLayout/public.dart';
 import 'dart:async';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter/scheduler.dart' show timeDilation;
+import 'package:flutter/services.dart' show SystemUiOverlayStyle;
 
 /// Globale consitant
 
@@ -92,13 +93,19 @@ class AutolayoutOptions {
 
   AutolayoutOptions copyWith({
     ThemeMode themeMode,
+    double textScaleFactor,
+    CustomtextDirection customtextDirection,
     Locale locale,
     double timeDilation,
+    TargetPlatform platform,
   }) {
     return AutolayoutOptions(
       themeMode: themeMode ?? this.themeMode,
+      textScaleFactor: textScaleFactor ?? _textScaleFactor,
+      customtextDirection: customtextDirection ?? this.customtextDirection,
       locale: locale ?? this.locale,
       timeDilation: timeDilation ?? this.timeDilation,
+      platform: platform ?? this.platform,
     );
   }
 
@@ -106,6 +113,12 @@ class AutolayoutOptions {
     final scope =
         context.dependOnInheritedWidgetOfExactType<_ModelBindingScope>();
     return scope.modelBindingState.currentModel;
+  }
+
+  static void update(BuildContext context, AutolayoutOptions newModel) {
+    final scope =
+        context.dependOnInheritedWidgetOfExactType<_ModelBindingScope>();
+    scope.modelBindingState.updateModel(newModel);
   }
 }
 
@@ -123,8 +136,8 @@ class _ModelBindingScope extends InheritedWidget {
   bool updateShouldNotify(_ModelBindingScope oldWidget) => true;
 }
 
-class MoldelBinding extends StatefulWidget {
-  MoldelBinding({
+class ModelBinding extends StatefulWidget {
+  ModelBinding({
     Key key,
     this.initialModel = const AutolayoutOptions(),
     this.child,
@@ -138,7 +151,7 @@ class MoldelBinding extends StatefulWidget {
   _ModelBindingState createState() => _ModelBindingState();
 }
 
-class _ModelBindingState extends State<MoldelBinding> {
+class _ModelBindingState extends State<ModelBinding> {
   AutolayoutOptions currentModel;
   Timer _timeDilationTime;
 
