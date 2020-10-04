@@ -13,3 +13,4 @@ export 'gallery/chip_demo.dart';
 export 'gallery/data_table_demo.dart';
 export 'gallery/dialog_demo.dart';
 export 'gallery/grid_list_demo.dart';
+export 'gallery/list_demo.dart';

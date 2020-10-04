@@ -58,6 +58,9 @@ class MyApp extends StatelessWidget {
               '/grid_list_demo': (BuildContext context) => GridListDemo(
                     type: GridListDemoType.header,
                   ),
+              '/list_demo': (BuildContext context) => ListDemo(
+                    type: ListDemoType.twoLine,
+                  ),
             },
             localizationsDelegates: const [
               ...AutolayoutLocalizations.localizationsDelegates,
@@ -173,6 +176,12 @@ class _MyHomePageSatate extends State<MyHomePage> {
                     name: "Grid list demo",
                     onPressed: () {
                       Navigator.pushNamed(context, '/grid_list_demo');
+                    },
+                  ),
+                  GalleryButton(
+                    name: "List demo",
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/list_demo');
                     },
                   ),
                 ],
