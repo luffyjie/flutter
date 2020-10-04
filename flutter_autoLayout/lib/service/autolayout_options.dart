@@ -63,7 +63,7 @@ class AutolayoutOptions {
         if (language == null) return null;
         return rtlLanguages.contains(language)
             ? TextDirection.rtl
-            : TextDirection.rtl;
+            : TextDirection.ltr;
       case CustomtextDirection.rtl:
         return TextDirection.rtl;
       default:
@@ -119,6 +119,32 @@ class AutolayoutOptions {
     final scope =
         context.dependOnInheritedWidgetOfExactType<_ModelBindingScope>();
     scope.modelBindingState.updateModel(newModel);
+  }
+}
+
+class ApplyTextOptions extends StatelessWidget {
+  const ApplyTextOptions({@required this.child});
+
+  final Widget child;
+
+  @override
+  Widget build(BuildContext context) {
+    final options = AutolayoutOptions.of(context);
+    final textDirection = options.resolvedTextDirection();
+    final textScaleFactor = options.textScaleFactor(context);
+
+    Widget widget = MediaQuery(
+      data: MediaQuery.of(context).copyWith(
+        textScaleFactor: textScaleFactor,
+      ),
+      child: child,
+    );
+    return textDirection == null
+        ? widget
+        : Directionality(
+            textDirection: textDirection,
+            child: widget,
+          );
   }
 }
 

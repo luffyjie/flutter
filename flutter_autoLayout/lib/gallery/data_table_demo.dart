@@ -34,18 +34,18 @@ class _DataTableDemoSate extends State<DataTableDemo> {
 
   @override
   Widget build(BuildContext context) {
-    final Localizations = AutolayoutLocalizations.of(context);
+    final localizations = AutolayoutLocalizations.of(context);
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        title: Text(Localizations.demoDataTableTitle),
+        title: Text(localizations.demoDataTableTitle),
       ),
       body: Scrollbar(
           child: ListView(
         padding: const EdgeInsets.all(16),
         children: [
           PaginatedDataTable(
-            header: Text(Localizations.dataTableHeader),
+            header: Text(localizations.dataTableHeader),
             rowsPerPage: _rowsPerPage,
             onRowsPerPageChanged: (value) {
               setState(() {
@@ -57,48 +57,48 @@ class _DataTableDemoSate extends State<DataTableDemo> {
             onSelectAll: _dessertsDataSource._selectAll,
             columns: [
               DataColumn(
-                label: Text(Localizations.dataTableColumnDessert),
+                label: Text(localizations.dataTableColumnDessert),
                 onSort: (columnIndex, ascending) =>
                     _sort((d) => d.name, columnIndex, ascending),
               ),
               DataColumn(
-                label: Text(Localizations.dataTableColumnDessert),
+                label: Text(localizations.dataTableColumnDessert),
                 numeric: true,
                 onSort: (columnIndex, ascending) =>
                     _sort((d) => d.calories, columnIndex, ascending),
               ),
               DataColumn(
-                label: Text(Localizations.dataTableColumnDessert),
+                label: Text(localizations.dataTableColumnDessert),
                 numeric: true,
                 onSort: (columnIndex, ascending) =>
                     _sort((d) => d.fat, columnIndex, ascending),
               ),
               DataColumn(
-                label: Text(Localizations.dataTableColumnDessert),
+                label: Text(localizations.dataTableColumnDessert),
                 numeric: true,
                 onSort: (columnIndex, ascending) =>
                     _sort((d) => d.carbs, columnIndex, ascending),
               ),
               DataColumn(
-                label: Text(Localizations.dataTableColumnDessert),
+                label: Text(localizations.dataTableColumnDessert),
                 numeric: true,
                 onSort: (columnIndex, ascending) =>
                     _sort((d) => d.protein, columnIndex, ascending),
               ),
               DataColumn(
-                label: Text(Localizations.dataTableColumnDessert),
+                label: Text(localizations.dataTableColumnDessert),
                 numeric: true,
                 onSort: (columnIndex, ascending) =>
                     _sort((d) => d.sodium, columnIndex, ascending),
               ),
               DataColumn(
-                label: Text(Localizations.dataTableColumnDessert),
+                label: Text(localizations.dataTableColumnDessert),
                 numeric: true,
                 onSort: (columnIndex, ascending) =>
                     _sort((d) => d.calcium, columnIndex, ascending),
               ),
               DataColumn(
-                label: Text(Localizations.dataTableColumnDessert),
+                label: Text(localizations.dataTableColumnDessert),
                 numeric: true,
                 onSort: (columnIndex, ascending) =>
                     _sort((d) => d.iron, columnIndex, ascending),
