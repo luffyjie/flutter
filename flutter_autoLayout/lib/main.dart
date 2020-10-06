@@ -61,6 +61,7 @@ class MyApp extends StatelessWidget {
               '/list_demo': (BuildContext context) => ListDemo(
                     type: ListDemoType.twoLine,
                   ),
+              '/menu_demo': (BuildContext context) => MenuDemo(),
             },
             localizationsDelegates: const [
               ...AutolayoutLocalizations.localizationsDelegates,
@@ -94,8 +95,7 @@ class _MyHomePageSatate extends State<MyHomePage> {
           title: Text("Home"),
         ),
         body: SafeArea(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+          child: ListView(
             children: [
               Container(
                 alignment: Alignment.center,
@@ -184,6 +184,12 @@ class _MyHomePageSatate extends State<MyHomePage> {
                       Navigator.pushNamed(context, '/list_demo');
                     },
                   ),
+                  GalleryButton(
+                    name: "Menu demo",
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/menu_demo');
+                    },
+                  ),
                 ],
               ),
               Row(
@@ -232,12 +238,6 @@ class _MyHomePageSatate extends State<MyHomePage> {
                 child: Container(
                   color: Colors.amber,
                   child: Text("Hello World"),
-                ),
-              ),
-              Expanded(
-                flex: 1,
-                child: Container(
-                  color: Colors.green,
                 ),
               )
             ],
