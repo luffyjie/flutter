@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter_autoLayout/gallery/picker_demo.dart';
 import 'package:flutter_autoLayout/themes/theme_data.dart';
 import 'package:flutter_localized_locales/flutter_localized_locales.dart';
 import 'public.dart';
@@ -62,12 +63,12 @@ class MyApp extends StatelessWidget {
                     type: ListDemoType.twoLine,
                   ),
               '/menu_demo': (BuildContext context) => MenuDemo(),
+              '/picker_demo': (BuildContext context) => PickerDemo(),
             },
             localizationsDelegates: const [
               ...AutolayoutLocalizations.localizationsDelegates,
               LocaleNamesLocalizationsDelegate()
             ],
-            // locale: const Locale('zh', 'en'),
             supportedLocales: AutolayoutLocalizations.supportedLocales,
             locale: AutolayoutOptions.of(context).locale,
             localeResolutionCallback: (locale, supportedLocales) {
@@ -190,6 +191,12 @@ class _MyHomePageSatate extends State<MyHomePage> {
                       Navigator.pushNamed(context, '/menu_demo');
                     },
                   ),
+                  GalleryButton(
+                    name: "Pikcer demo",
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/picker_demo');
+                    },
+                  ),
                 ],
               ),
               Row(
@@ -239,7 +246,13 @@ class _MyHomePageSatate extends State<MyHomePage> {
                   color: Colors.amber,
                   child: Text("Hello World"),
                 ),
-              )
+              ),
+              SizedBox(
+                height: 300,
+                child: Container(
+                  color: Colors.blue,
+                ),
+              ),
             ],
           ),
         ));
