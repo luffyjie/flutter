@@ -64,6 +64,8 @@ class MyApp extends StatelessWidget {
                   ),
               '/menu_demo': (BuildContext context) => MenuDemo(),
               '/picker_demo': (BuildContext context) => PickerDemo(),
+              '/progress_indicator_demo': (BuildContext context) =>
+                  ProgressIndicatorDemo(),
             },
             localizationsDelegates: const [
               ...AutolayoutLocalizations.localizationsDelegates,
@@ -195,6 +197,12 @@ class _MyHomePageSatate extends State<MyHomePage> {
                     name: "Pikcer demo",
                     onPressed: () {
                       Navigator.pushNamed(context, '/picker_demo');
+                    },
+                  ),
+                  GalleryButton(
+                    name: "Progress indicator demo",
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/progress_indicator_demo');
                     },
                   ),
                 ],

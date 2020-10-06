@@ -15,3 +15,4 @@ export 'gallery/dialog_demo.dart';
 export 'gallery/grid_list_demo.dart';
 export 'gallery/list_demo.dart';
 export 'gallery/menu_demo.dart';
+export 'gallery/progress_indicator_demo.dart';
