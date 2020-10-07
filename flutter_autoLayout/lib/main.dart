@@ -67,6 +67,9 @@ class MyApp extends StatelessWidget {
                   ProgressIndicatorDemo(),
               '/selection_control_demo': (BuildContext context) =>
                   SelectionControlsDemo(),
+              '/snackbar_demo': (BuildContext context) => SnackbarsDemo(),
+              '/tabs_demo': (BuildContext context) =>
+                  TabsDemo(type: TabsDemoType.nonScrollable),
               '/tooltip_demo': (BuildContext context) => TooltipDemo(),
             },
             localizationsDelegates: const [
@@ -211,6 +214,18 @@ class _MyHomePageSatate extends State<MyHomePage> {
                     name: "Selection control demo",
                     onPressed: () {
                       Navigator.pushNamed(context, '/selection_control_demo');
+                    },
+                  ),
+                  GalleryButton(
+                    name: "Snackbar demo",
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/snackbar_demo');
+                    },
+                  ),
+                  GalleryButton(
+                    name: "Tabs demo",
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/tabs_demo');
                     },
                   ),
                   GalleryButton(

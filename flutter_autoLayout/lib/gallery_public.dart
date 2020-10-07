@@ -19,3 +19,5 @@ export 'gallery/progress_indicator_demo.dart';
 export 'gallery/picker_demo.dart';
 export 'gallery/selection_controls_demo.dart';
 export 'gallery/tooltip_demo.dart';
+export 'gallery/tabs_demo.dart';
+export 'gallery/snackbar_demo.dart';
