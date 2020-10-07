@@ -70,6 +70,7 @@ class MyApp extends StatelessWidget {
               '/snackbar_demo': (BuildContext context) => SnackbarsDemo(),
               '/tabs_demo': (BuildContext context) =>
                   TabsDemo(type: TabsDemoType.nonScrollable),
+              '/text_field_demo': (BuildContext context) => TextFieldDemo(),
               '/tooltip_demo': (BuildContext context) => TooltipDemo(),
             },
             localizationsDelegates: const [
@@ -232,6 +233,12 @@ class _MyHomePageSatate extends State<MyHomePage> {
                     name: "Tooltip demo",
                     onPressed: () {
                       Navigator.pushNamed(context, '/tooltip_demo');
+                    },
+                  ),
+                  GalleryButton(
+                    name: "Text field demo",
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/text_field_demo');
                     },
                   ),
                 ],
