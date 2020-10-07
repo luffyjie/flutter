@@ -1,4 +1,5 @@
 # flutter
+记录学习flutter界面布局以及常用的控件使用，包含了支持多国际化语言，换肤模式，以及官方Gallery项目中的例子。
 Practice flutter auto layout
 
 I test all kind of component, display how to make a page autolayout like use UIStackview in iOS.
