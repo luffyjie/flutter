@@ -72,6 +72,7 @@ class MyApp extends StatelessWidget {
                   TabsDemo(type: TabsDemoType.nonScrollable),
               '/text_field_demo': (BuildContext context) => TextFieldDemo(),
               '/tooltip_demo': (BuildContext context) => TooltipDemo(),
+              '/sliders_demo': (BuildContext context) => SlidersDemo(),
             },
             localizationsDelegates: const [
               ...AutolayoutLocalizations.localizationsDelegates,
@@ -239,6 +240,12 @@ class _MyHomePageSatate extends State<MyHomePage> {
                     name: "Text field demo",
                     onPressed: () {
                       Navigator.pushNamed(context, '/text_field_demo');
+                    },
+                  ),
+                  GalleryButton(
+                    name: "Sliders demo",
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/sliders_demo');
                     },
                   ),
                 ],
