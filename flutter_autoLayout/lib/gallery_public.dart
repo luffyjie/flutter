@@ -16,3 +16,6 @@ export 'gallery/grid_list_demo.dart';
 export 'gallery/list_demo.dart';
 export 'gallery/menu_demo.dart';
 export 'gallery/progress_indicator_demo.dart';
+export 'gallery/picker_demo.dart';
+export 'gallery/selection_controls_demo.dart';
+export 'gallery/tooltip_demo.dart';

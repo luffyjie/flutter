@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/scheduler.dart';
-import 'package:flutter_autoLayout/gallery/picker_demo.dart';
 import 'package:flutter_autoLayout/themes/theme_data.dart';
 import 'package:flutter_localized_locales/flutter_localized_locales.dart';
 import 'public.dart';
@@ -66,6 +65,9 @@ class MyApp extends StatelessWidget {
               '/picker_demo': (BuildContext context) => PickerDemo(),
               '/progress_indicator_demo': (BuildContext context) =>
                   ProgressIndicatorDemo(),
+              '/selection_control_demo': (BuildContext context) =>
+                  SelectionControlsDemo(),
+              '/tooltip_demo': (BuildContext context) => TooltipDemo(),
             },
             localizationsDelegates: const [
               ...AutolayoutLocalizations.localizationsDelegates,
@@ -203,6 +205,18 @@ class _MyHomePageSatate extends State<MyHomePage> {
                     name: "Progress indicator demo",
                     onPressed: () {
                       Navigator.pushNamed(context, '/progress_indicator_demo');
+                    },
+                  ),
+                  GalleryButton(
+                    name: "Selection control demo",
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/selection_control_demo');
+                    },
+                  ),
+                  GalleryButton(
+                    name: "Tooltip demo",
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/tooltip_demo');
                     },
                   ),
                 ],
