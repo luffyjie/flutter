@@ -77,6 +77,12 @@ class MyApp extends StatelessWidget {
                   CupertinoProgressIndicatorDemo(),
               '/cupertino_alert_demo': (BuildContext context) =>
                   CupertinoAlertDemo(),
+              '/cupertino_button_demo': (BuildContext context) =>
+                  CupertinoButtonDemo(),
+              '/cupertino_navigation_demo': (BuildContext context) =>
+                  CupertinoNavigationBarDemo(),
+              '/cupertino_picker_demo': (BuildContext context) =>
+                  CupertinoPickerDemo()
             },
             localizationsDelegates: const [
               ...AutolayoutLocalizations.localizationsDelegates,
@@ -263,6 +269,25 @@ class _MyHomePageSatate extends State<MyHomePage> {
                     name: "cupertino alert demo",
                     onPressed: () {
                       Navigator.pushNamed(context, '/cupertino_alert_demo');
+                    },
+                  ),
+                  GalleryButton(
+                    name: "cupertino button demo",
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/cupertino_button_demo');
+                    },
+                  ),
+                  GalleryButton(
+                    name: "cupertino navigation demo",
+                    onPressed: () {
+                      Navigator.pushNamed(
+                          context, '/cupertino_navigation_demo');
+                    },
+                  ),
+                  GalleryButton(
+                    name: "cupertino pikcer demo",
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/cupertino_picker_demo');
                     },
                   ),
                 ],
