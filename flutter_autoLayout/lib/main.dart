@@ -73,6 +73,10 @@ class MyApp extends StatelessWidget {
               '/text_field_demo': (BuildContext context) => TextFieldDemo(),
               '/tooltip_demo': (BuildContext context) => TooltipDemo(),
               '/sliders_demo': (BuildContext context) => SlidersDemo(),
+              '/cupertino_activity_indicator_demo': (BuildContext context) =>
+                  CupertinoProgressIndicatorDemo(),
+              '/cupertino_alert_demo': (BuildContext context) =>
+                  CupertinoAlertDemo(),
             },
             localizationsDelegates: const [
               ...AutolayoutLocalizations.localizationsDelegates,
@@ -246,6 +250,19 @@ class _MyHomePageSatate extends State<MyHomePage> {
                     name: "Sliders demo",
                     onPressed: () {
                       Navigator.pushNamed(context, '/sliders_demo');
+                    },
+                  ),
+                  GalleryButton(
+                    name: "cupertino activity indicator demo",
+                    onPressed: () {
+                      Navigator.pushNamed(
+                          context, '/cupertino_activity_indicator_demo');
+                    },
+                  ),
+                  GalleryButton(
+                    name: "cupertino alert demo",
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/cupertino_alert_demo');
                     },
                   ),
                 ],
