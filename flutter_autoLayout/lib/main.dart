@@ -82,7 +82,19 @@ class MyApp extends StatelessWidget {
               '/cupertino_navigation_demo': (BuildContext context) =>
                   CupertinoNavigationBarDemo(),
               '/cupertino_picker_demo': (BuildContext context) =>
-                  CupertinoPickerDemo()
+                  CupertinoPickerDemo(),
+              '/cupertino_refresh_demo': (BuildContext context) =>
+                  CupertinoRefreshControlDemo(),
+              '/cupertino_segmented_control_demo': (BuildContext context) =>
+                  CupertinoSegmentedControlDemo(),
+              '/cupertino_slider_demo': (BuildContext context) =>
+                  CupertinoSliderDemo(),
+              '/cupertino_switch_demo': (BuildContext context) =>
+                  CupertinoSwitchDemo(),
+              '/cupertino_tab_bar_demo': (BuildContext context) =>
+                  CupertinoTabBarDemo(),
+              '/cupertino_text_field_demo': (BuildContext context) =>
+                  CupertinoTextFieldDemo(),
             },
             localizationsDelegates: const [
               ...AutolayoutLocalizations.localizationsDelegates,
@@ -288,6 +300,44 @@ class _MyHomePageSatate extends State<MyHomePage> {
                     name: "cupertino pikcer demo",
                     onPressed: () {
                       Navigator.pushNamed(context, '/cupertino_picker_demo');
+                    },
+                  ),
+                  GalleryButton(
+                    name: "cupertino refresh demo",
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/cupertino_refresh_demo');
+                    },
+                  ),
+                  GalleryButton(
+                    name: "cupertino segmented control demo",
+                    onPressed: () {
+                      Navigator.pushNamed(
+                          context, '/cupertino_segmented_control_demo');
+                    },
+                  ),
+                  GalleryButton(
+                    name: "cupertino slider demo",
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/cupertino_slider_demo');
+                    },
+                  ),
+                  GalleryButton(
+                    name: "cupertino switch demo",
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/cupertino_switch_demo');
+                    },
+                  ),
+                  GalleryButton(
+                    name: "cupertino tab bar demo",
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/cupertino_tab_bar_demo');
+                    },
+                  ),
+                  GalleryButton(
+                    name: "cupertino text field demo",
+                    onPressed: () {
+                      Navigator.pushNamed(
+                          context, '/cupertino_text_field_demo');
                     },
                   ),
                 ],
