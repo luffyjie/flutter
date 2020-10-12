@@ -23,6 +23,8 @@ export 'gallery/material/snackbar_demo.dart';
 export 'gallery/material/tabs_demo.dart';
 export 'gallery/material/text_field_demo.dart';
 export 'gallery/material/tooltip_demo.dart';
+export 'gallery/material/dialog_buttons_demo.dart';
+export 'gallery/material/webview_demo.dart';
 // cupertino
 export 'gallery/cupertino/cupertino_activity_indicator_demo.dart';
 export 'gallery/cupertino/cupertino_alert_demo.dart';

@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_autoLayout/test/inherited_demo.dart';
+import 'package:flutter_autoLayout/test/provider_demo.dart';
 import 'package:flutter_autoLayout/themes/theme_data.dart';
 import 'package:flutter_localized_locales/flutter_localized_locales.dart';
 import 'public.dart';
@@ -96,9 +97,13 @@ class MyApp extends StatelessWidget {
                   CupertinoTabBarDemo(),
               '/cupertino_text_field_demo': (BuildContext context) =>
                   CupertinoTextFieldDemo(),
+              '/dialog_buttons_demo': (BuildContext context) =>
+                  DilogButtonsDemo(),
+              '/webView_demo': (BuildContext context) => WebViewDemo(),
               // test demo
               '/inherited_demo': (BuildContext context) =>
                   InheritedWidgetDemo(),
+              '/provider_demo': (BuildContext context) => ProviderDemo(),
             },
             localizationsDelegates: const [
               ...AutolayoutLocalizations.localizationsDelegates,
@@ -150,11 +155,12 @@ class _MyHomePageSatate extends State<MyHomePage> {
                     }),
               ),
               Padding(
-                  padding: const EdgeInsets.all(8),
-                  child: Text(
-                    'Gallery demo',
-                    style: TextStyle(color: Colors.black),
-                  )),
+                padding: const EdgeInsets.all(8),
+                child: Text(
+                  'Gallery demo',
+                  style: TextStyle(color: Colors.black),
+                ),
+              ),
               Wrap(
                 spacing: 8,
                 runSpacing: 4,
@@ -344,14 +350,43 @@ class _MyHomePageSatate extends State<MyHomePage> {
                           context, '/cupertino_text_field_demo');
                     },
                   ),
+                  GalleryButton(
+                    name: "Dialog buttons demo",
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/dialog_buttons_demo');
+                    },
+                  ),
+                  GalleryButton(
+                    name: "WebView demo",
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/webView_demo');
+                    },
+                  ),
                 ],
               ),
-              Row(
+              Padding(
+                padding: const EdgeInsets.all(8),
+                child: Text(
+                  'inherited test',
+                  style: TextStyle(color: Colors.black),
+                ),
+              ),
+              Wrap(
+                spacing: 8,
+                runSpacing: 4,
                 children: [
                   GalleryButton(
                     name: "inherited text demo",
+                    color: Colors.orange,
                     onPressed: () {
                       Navigator.pushNamed(context, '/inherited_demo');
+                    },
+                  ),
+                  GalleryButton(
+                    name: "provider demo",
+                    color: Colors.orange,
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/provider_demo');
                     },
                   ),
                 ],

@@ -36,7 +36,8 @@ dependencies:
   dio: ^3.0.10
   rxdart: ^0.24.1
   flutter_swiper : ^1.1.6
-
+  webview_flutter: ^1.0.1
+  
   # Gallery
   rally_assets: ^2.0.0
   flutter_gallery_assets: ^0.2.6

@@ -72,28 +72,32 @@ class _InheritedWidgetDemoState extends State<InheritedWidgetDemo> {
     return Center(
       child: _ShareDataWidget(
         data: data,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.only(bottom: 20.0),
-              child: _TestWidget(),
-            ),
-            Builder(
-              builder: (context) {
-                print("RaisedButton build");
-                return RaisedButton(
-                  child: Text("Increment"),
-                  onPressed: () {
-                    ++data;
-                    if (data % 3 == 1) {
-                      setState(() {});
-                    }
+        child: Scaffold(
+          body: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 20.0),
+                  child: _TestWidget(),
+                ),
+                Builder(
+                  builder: (context) {
+                    print("RaisedButton build");
+                    return RaisedButton(
+                      child: Text("Increment"),
+                      onPressed: () {
+                        ++data;
+                        if (data % 3 == 1) {
+                          setState(() {});
+                        }
+                      },
+                    );
                   },
-                );
-              },
+                ),
+              ],
             ),
-          ],
+          ),
         ),
       ),
     );
