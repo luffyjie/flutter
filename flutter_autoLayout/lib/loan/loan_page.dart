@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_autoLayout/public.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 
 import 'loan_cell.dart';
@@ -46,55 +46,52 @@ class _LoanPageState extends State<LoanPage> {
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
-        navigationBar: CupertinoNavigationBar(
-          middle: Text('Loan'),
-          leading: IconButton(
-            icon: Icon(
-              CupertinoIcons.back,
-            ),
-            onPressed: () {
-              Navigator.pop(context);
-            },
-          ),
-        ),
-        child: Scaffold(
-            body: SafeArea(
-                child: Column(children: [
+      navigationBar: CupertinoNavigationBar(
+        middle: Text('Loan'),
+      ),
+      child: Column(
+        children: [
           SizedBox(
             height: 25,
             width: 19,
           ),
           SizedBox(
-              height: 160,
-              child: Swiper(
-                  itemHeight: 300,
-                  itemWidth: 400,
-                  onIndexChanged: (n) => setState(() => fi = fd[n]),
-                  itemCount: fd.length,
-                  itemBuilder: (cx, i) {
-                    return Container(
-                        child: ClipRRect(
+            height: 160,
+            child: Swiper(
+                itemHeight: 300,
+                itemWidth: 400,
+                onIndexChanged: (n) => setState(() => fi = fd[n]),
+                itemCount: fd.length,
+                itemBuilder: (cx, i) {
+                  return Container(
+                    child: ClipRRect(
                       borderRadius: BorderRadius.circular(6),
                       child: Hero(
                           tag: fd[i]['tid'],
                           child: Image.asset('assets/images/' + fd[i]['image'],
                               fit: BoxFit.cover)),
-                    ));
-                  },
-                  viewportFraction: 0.9,
-                  scale: 0.8)),
+                    ),
+                  );
+                },
+                viewportFraction: 0.9,
+                scale: 0.8),
+          ),
           Expanded(
-              flex: 1,
-              child: ListView.builder(
-                  itemCount: 10,
-                  itemExtent: 120,
-                  itemBuilder: (BuildContext context, int index) {
-                    return LoanCellPage(
-                        iconName: fi["image"],
-                        loanName: fi["name"],
-                        loanId: fi["tid"],
-                        loanSubStr: fi["subStr"]);
-                  }))
-        ]))));
+            flex: 1,
+            child: ListView.builder(
+              itemCount: 10,
+              itemExtent: 120,
+              itemBuilder: (BuildContext context, int index) {
+                return LoanCellPage(
+                    iconName: fi["image"],
+                    loanName: fi["name"],
+                    loanId: fi["tid"],
+                    loanSubStr: fi["subStr"]);
+              },
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }

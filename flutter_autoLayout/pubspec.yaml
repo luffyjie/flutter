@@ -33,6 +33,8 @@ dependencies:
   shared_preferences: ^0.5.12
 
   #third package
+  dio: ^3.0.10
+  rxdart: ^0.24.1
   flutter_swiper : ^1.1.6
 
   # Gallery

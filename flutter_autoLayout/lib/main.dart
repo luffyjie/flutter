@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter_autoLayout/test/inherited_demo.dart';
 import 'package:flutter_autoLayout/themes/theme_data.dart';
 import 'package:flutter_localized_locales/flutter_localized_locales.dart';
 import 'public.dart';
@@ -95,6 +96,9 @@ class MyApp extends StatelessWidget {
                   CupertinoTabBarDemo(),
               '/cupertino_text_field_demo': (BuildContext context) =>
                   CupertinoTextFieldDemo(),
+              // test demo
+              '/inherited_demo': (BuildContext context) =>
+                  InheritedWidgetDemo(),
             },
             localizationsDelegates: const [
               ...AutolayoutLocalizations.localizationsDelegates,
@@ -338,6 +342,16 @@ class _MyHomePageSatate extends State<MyHomePage> {
                     onPressed: () {
                       Navigator.pushNamed(
                           context, '/cupertino_text_field_demo');
+                    },
+                  ),
+                ],
+              ),
+              Row(
+                children: [
+                  GalleryButton(
+                    name: "inherited text demo",
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/inherited_demo');
                     },
                   ),
                 ],
