@@ -1,7 +1,6 @@
 library gallery_public;
 
 //Gallery demo
-export 'pay/pay_method_list_page.dart';
 export 'gallery/material/bottom_app_bar_demo.dart';
 export 'gallery/material/banner_demo.dart';
 export 'gallery/material/gallery_button.dart';
@@ -37,3 +36,6 @@ export 'gallery/cupertino/cupertino_slider_demo.dart';
 export 'gallery/cupertino/cupertino_switch_demo.dart';
 export 'gallery/cupertino/cupertino_tab_bar_demo.dart';
 export 'gallery/cupertino/cupertino_text_field_demo.dart';
+// state
+export 'state/inherited_demo.dart';
+export 'state/provider_demo.dart';

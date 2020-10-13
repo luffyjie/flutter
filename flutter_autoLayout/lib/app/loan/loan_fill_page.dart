@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_autoLayout/public.dart';
-import '../widget/submit_button.dart';
+import 'package:flutter_autoLayout/app/widget/submit_button.dart';
 
 class LoanFillPage extends StatelessWidget {
   @override
