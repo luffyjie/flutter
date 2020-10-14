@@ -4,7 +4,7 @@ import 'package:flutter/scheduler.dart';
 import 'package:fluro/fluro.dart' as fluro;
 import 'package:flutter_autoLayout/public.dart';
 import 'package:flutter_autoLayout/garage/garage_app.dart';
-import 'package:flutter_autoLayout/routes.dart';
+import 'package:flutter_autoLayout/route/routes.dart';
 import 'package:flutter_autoLayout/themes/theme_data.dart';
 import 'package:flutter_localized_locales/flutter_localized_locales.dart';
 import 'package:oktoast/oktoast.dart';
@@ -60,7 +60,7 @@ class _AppState extends State<App> {
               routes: {
                 '/garage': (BuildContext context) => GarageApp(),
               },
-              initialRoute: '/launch',
+              initialRoute: Routes.launch,
               onGenerateRoute: Application.router.generator,
             ),
           );

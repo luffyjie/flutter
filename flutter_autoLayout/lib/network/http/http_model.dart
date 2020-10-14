@@ -1,6 +1,6 @@
 // use for service response
 import 'package:dio/dio.dart';
-import 'package:flutter_autoLayout/network/service/http_profile.dart';
+import 'http_profile.dart';
 
 class Result {
   bool isSuccess;

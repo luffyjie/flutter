@@ -1,8 +1,8 @@
-import 'package:flutter_autoLayout/network/service/data_helper.dart';
-import 'package:flutter_autoLayout/network/service/http_model.dart';
-import 'package:flutter_autoLayout/network/service/service.dart';
+import '../http/data_helper.dart';
+import '../http/http_model.dart';
+import '../http/service.dart';
 
-class LoanApi {
+class LoanHandler {
   final _listPath = "/api/v1/loan/repayLoanList";
 
   Future<Result> loanList() async {

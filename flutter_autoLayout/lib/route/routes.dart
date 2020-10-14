@@ -1,6 +1,7 @@
-import 'package:flutter/material.dart';
+import 'package:flutter_autoLayout/public.dart';
 import 'package:fluro/fluro.dart' as fluro;
-import 'package:flutter_autoLayout/app/user/user_route.dart';
+import 'package:flutter_autoLayout/route/laon_route.dart';
+import 'package:flutter_autoLayout/route/user_route.dart';
 import 'package:flutter_autoLayout/app/discover/discover_page.dart';
 import 'package:flutter_autoLayout/app/home/home_page.dart';
 import 'package:flutter_autoLayout/app/launch/launch_page.dart';
@@ -43,6 +44,7 @@ class Routes {
 
     // module register
     UserRouter().initRouter(router);
+    LoanRouter().initRouter(router);
   }
 }
 

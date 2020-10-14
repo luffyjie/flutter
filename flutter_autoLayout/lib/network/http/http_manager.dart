@@ -1,8 +1,8 @@
 import 'package:dio/dio.dart';
-import 'package:flutter_autoLayout/network/service/http_profile.dart';
-import 'package:flutter_autoLayout/network/service/http_log_interceptor.dart';
-import 'package:flutter_autoLayout/network/service/response_interceptor.dart';
-import 'package:flutter_autoLayout/network/service/http_model.dart';
+import 'http_profile.dart';
+import 'http_interceptor.dart';
+import 'response_interceptor.dart';
+import 'http_model.dart';
 
 class HttpManager {
   static HttpManager _instance = HttpManager._internal();

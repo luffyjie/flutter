@@ -7,9 +7,9 @@ class HttpProfile {
   static final HttpProfile _instance = HttpProfile._online();
 
   HttpProfile._online() {
-    apiDomain = 'https://app-api.fastpay.com.tw';
-    fileDomain = 'https://storage.googleapis.com/img-fastpay';
-    webDomain = 'https://h5-fastpay.web.app';
+    apiDomain = 'http://192.168.0.105/fastpay-app-api';
+    fileDomain = 'http://192.168.0.106';
+    webDomain = 'https://fastpay-h5.firebaseapp.com';
     kycDomain = 'https://api-sgp.megvii.com';
   }
 

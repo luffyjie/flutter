@@ -70,6 +70,13 @@ class _LaunchPageState extends State<LaunchPage> with TickerProviderStateMixin {
               Navigator.pushNamed(context, '/garage');
             },
           ),
+          SizedBox(height: 20),
+          RaisedButton(
+            child: Text('Loan page network'),
+            onPressed: () {
+              Application.push(context, Routes.launch);
+            },
+          ),
         ],
       ),
     );
@@ -77,7 +84,7 @@ class _LaunchPageState extends State<LaunchPage> with TickerProviderStateMixin {
 }
 
 void _nextPage(BuildContext context) {
-  Application.push(context, '/tab');
+  Application.push(context, Routes.tab);
 }
 
 class AnimatedCountdown extends AnimatedWidget {

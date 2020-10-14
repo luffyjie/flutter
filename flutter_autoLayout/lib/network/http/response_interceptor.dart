@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:flutter_autoLayout/network/service/http_model.dart';
+import 'http_model.dart';
 
 class ResponseInterceptors extends InterceptorsWrapper {
   @override

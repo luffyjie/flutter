@@ -1,4 +1,5 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter_autoLayout/app/loan/viewmodel/loan_viewmodel.dart';
+import 'package:flutter_autoLayout/basic/basic_view.dart';
 import 'package:flutter_autoLayout/public.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 
@@ -45,10 +46,22 @@ class _LoanPageState extends State<LoanPage> {
 
   @override
   Widget build(BuildContext context) {
-    return CupertinoPageScaffold(
-      navigationBar: CupertinoNavigationBar(
-        middle: Text('Loan'),
+    return BaseView<LoanViewModel>(
+      onModelReady: (model) async {
+        model.loanList();
+      },
+      model: LoanViewModel(),
+      builder: (context, model, child) => Scaffold(
+        appBar: AppBar(
+          title: Text('Loan'),
+        ),
+        body: _buildBody(context, model),
       ),
+    );
+  }
+
+  Widget _buildBody(BuildContext context, LoanViewModel model) {
+    return SafeArea(
       child: Column(
         children: [
           SizedBox(

@@ -1,5 +1,4 @@
-import 'package:flutter_autoLayout/network/service/http_manager.dart';
-
+import 'http_manager.dart';
 import 'http_model.dart';
 
 class Service {
