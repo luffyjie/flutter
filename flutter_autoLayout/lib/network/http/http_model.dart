@@ -1,10 +1,10 @@
 // use for service response
 import 'package:dio/dio.dart';
-import 'http_profile.dart';
+import '../http_profile.dart';
 
 class Result {
-  bool isSuccess;
   var data;
+  bool isSuccess;
   int code;
   var headers;
 

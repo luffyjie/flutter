@@ -25,8 +25,18 @@ class BaseModel extends ChangeNotifier {
     }
   }
 
+  bool get isBusy => state == ViewState.busy;
+
+  bool get isIdle => state == ViewState.idle;
+
+  bool get isEmpty => state == ViewState.empty;
+
+  bool get isError => state == ViewState.error;
+
   void setIdle() {
-    setSate(ViewState.idle);
+    Future.delayed(Duration(seconds: 1), () {
+      setSate(ViewState.idle);
+    });
   }
 
   void setBusy() {

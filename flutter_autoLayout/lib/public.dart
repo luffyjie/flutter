@@ -19,6 +19,7 @@ export 'package:flutter_autoLayout/basic/basic_model.dart';
 export 'package:flutter_autoLayout/basic/view_state.dart';
 
 //network
-export 'package:flutter_autoLayout/network/http/data_helper.dart';
+export 'package:flutter_autoLayout/network/service_helper.dart';
 export 'package:flutter_autoLayout/network/http/http_model.dart';
-export 'package:flutter_autoLayout/network/http/service.dart';
+export 'package:flutter_autoLayout/network/service.dart';
+export 'package:flutter_autoLayout/network/http/http_manager.dart';

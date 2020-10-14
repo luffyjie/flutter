@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'http_profile.dart';
+import '../http_profile.dart';
 import 'http_interceptor.dart';
 import 'response_interceptor.dart';
 import 'http_model.dart';
@@ -67,7 +67,6 @@ class HttpManager {
   //POST
   post(api, {parameters}) async {
     Response response;
-
     try {
       response = await _dio.post(api, data: parameters);
     } on DioError catch (e) {

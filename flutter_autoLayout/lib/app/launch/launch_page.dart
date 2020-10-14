@@ -17,7 +17,7 @@ class _LaunchPageState extends State<LaunchPage> with TickerProviderStateMixin {
       value: 0,
       vsync: this,
       duration: Duration(
-        seconds: 4,
+        seconds: 10,
       ),
     );
     _countdownController.forward();
@@ -74,7 +74,7 @@ class _LaunchPageState extends State<LaunchPage> with TickerProviderStateMixin {
           RaisedButton(
             child: Text('Loan page network'),
             onPressed: () {
-              Application.push(context, Routes.launch);
+              Application.push(context, '/loan');
             },
           ),
         ],

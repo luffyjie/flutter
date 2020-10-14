@@ -1,17 +1,19 @@
-import 'package:flutter_autoLayout/network/api/loan_handler.dart';
+import 'dart:io';
+
 import 'package:flutter_autoLayout/public.dart';
 
 class LoanViewModel extends BaseModel {
   final _listPath = "/api/v1/loan/repayLoanList";
+  final _initConfig = '/api/v1/init/initConfig';
 
-  LoanHandler handler = LoanHandler();
+  Result data;
 
-  Future<Result> loanList() async {
+  loanList() async {
     setBusy();
     var parameters = DataHelper.getBaseMap();
-    var resource = Resource(_listPath, parameters);
+    var resource = Resource(_initConfig, parameters);
     Result result = await Service.request(resource);
+    data = result;
     setIdle();
-    return result;
   }
 }

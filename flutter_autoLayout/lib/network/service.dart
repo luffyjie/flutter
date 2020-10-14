@@ -1,5 +1,5 @@
-import 'http_manager.dart';
-import 'http_model.dart';
+import 'http/http_manager.dart';
+import 'http/http_model.dart';
 
 class Service {
   static request(Resource resource) {

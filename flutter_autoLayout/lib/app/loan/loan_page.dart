@@ -48,15 +48,21 @@ class _LoanPageState extends State<LoanPage> {
   Widget build(BuildContext context) {
     return BaseView<LoanViewModel>(
       onModelReady: (model) async {
-        model.loanList();
+        await model.loanList();
       },
       model: LoanViewModel(),
       builder: (context, model, child) => Scaffold(
         appBar: AppBar(
           title: Text('Loan'),
         ),
-        body: _buildBody(context, model),
+        body: model.isBusy ? _loading() : _buildBody(context, model),
       ),
+    );
+  }
+
+  Widget _loading() {
+    return Center(
+      child: Text('Loding'),
     );
   }
 
@@ -64,6 +70,7 @@ class _LoanPageState extends State<LoanPage> {
     return SafeArea(
       child: Column(
         children: [
+          Text(model.data.isSuccess ? 'success' : 'error'),
           SizedBox(
             height: 25,
             width: 19,
