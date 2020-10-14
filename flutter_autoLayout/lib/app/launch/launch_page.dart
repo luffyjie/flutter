@@ -8,7 +8,6 @@ class LaunchPage extends StatefulWidget {
 }
 
 class _LaunchPageState extends State<LaunchPage> with TickerProviderStateMixin {
-  Animation<double> _animation;
   AnimationController _countdownController;
 
   @override
@@ -78,7 +77,7 @@ class _LaunchPageState extends State<LaunchPage> with TickerProviderStateMixin {
 }
 
 void _nextPage(BuildContext context) {
-  Application.router.navigateTo(context, '/tab');
+  Application.push(context, '/tab');
 }
 
 class AnimatedCountdown extends AnimatedWidget {

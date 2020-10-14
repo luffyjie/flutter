@@ -6,4 +6,4 @@ export 'package:flutter_autoLayout/styles.dart';
 export 'package:flutter_gen/gen_l10n/autolayout_localizations.dart';
 export 'package:flutter_autoLayout/autolayout_options.dart';
 export 'package:flutter_autoLayout/constants.dart';
-export 'package:flutter_autoLayout/route/application.dart';
+export 'package:flutter_autoLayout/route/routes.dart';

@@ -2,7 +2,7 @@ import 'package:dio/dio.dart';
 import 'service_model.dart';
 
 class Service {
-  final _encryptInterfaceList = ["/api/v1/recharge/rechargePayEncrypt"];
+  // final _encryptInterfaceList = ["/api/v1/recharge/rechargePayEncrypt"];
 
   List<int> _acceptableStatusCodes() {
     var list = List<int>();

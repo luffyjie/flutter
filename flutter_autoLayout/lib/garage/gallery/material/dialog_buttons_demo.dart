@@ -382,7 +382,7 @@ class DefaultButtons extends StatelessWidget {
 }
 
 class _ButtonDemo {
-  const _ButtonDemo({Key key, this.title, this.description, this.builder});
+  const _ButtonDemo({this.title, this.description, this.builder});
 
   final String title;
   final String description;

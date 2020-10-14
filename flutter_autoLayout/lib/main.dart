@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:fluro/fluro.dart' as fluro;
-import 'package:flutter_autoLayout/app/launch/launch_page.dart';
 import 'package:flutter_autoLayout/garage/garage_app.dart';
 import 'package:flutter_autoLayout/route/routes.dart';
 import 'package:flutter_autoLayout/themes/theme_data.dart';
@@ -59,7 +58,7 @@ class _AppState extends State<App> {
             routes: {
               '/garage': (BuildContext context) => GarageApp(),
             },
-            home: LaunchPage(),
+            initialRoute: '/launch',
             onGenerateRoute: Application.router.generator,
           );
         },
