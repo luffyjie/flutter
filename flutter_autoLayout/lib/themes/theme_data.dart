@@ -1,7 +1,7 @@
 import 'package:flutter_autoLayout/public.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class AutolayoutThemeData {
+class AppThemeData {
   static const _lightFillColor = Colors.black;
   static const _darkFillColor = Colors.white;
 

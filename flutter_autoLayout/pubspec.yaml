@@ -30,6 +30,7 @@ dependencies:
   oktoast: ^2.3.2
   url_launcher: ^5.7.2
   fluro: ^1.6.3
+  crypto: ^2.1.5
 
   #Gallery
   rally_assets: ^2.0.0

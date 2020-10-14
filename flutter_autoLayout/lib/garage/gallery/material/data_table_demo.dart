@@ -461,7 +461,7 @@ class _DessertDataSource extends DataTableSource {
   @override
   DataRow getRow(int index) {
     final format = NumberFormat.decimalPercentPattern(
-      locale: AutolayoutOptions.of(context).locale.toString(),
+      locale: ApplicationOptions.of(context).locale.toString(),
       decimalDigits: 0,
     );
     assert(index >= 0);

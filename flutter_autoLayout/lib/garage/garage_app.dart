@@ -13,7 +13,7 @@ class GarageApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ModelBinding(
-      initialModel: AutolayoutOptions(
+      initialModel: ApplicationOptions(
         themeMode: ThemeMode.system,
         textScaleFactor: systemTextScaleFactorOption,
         customtextDirection: CustomtextDirection.localeBased,
@@ -26,11 +26,11 @@ class GarageApp extends StatelessWidget {
           return MaterialApp(
             title: "Flutter_AutoLayout",
             debugShowCheckedModeBanner: false,
-            themeMode: AutolayoutOptions.of(context).themeMode,
-            theme: AutolayoutThemeData.lightThemeData
-                .copyWith(platform: AutolayoutOptions.of(context).platform),
-            darkTheme: AutolayoutThemeData.darkThemeData
-                .copyWith(platform: AutolayoutOptions.of(context).platform),
+            themeMode: ApplicationOptions.of(context).themeMode,
+            theme: AppThemeData.lightThemeData
+                .copyWith(platform: ApplicationOptions.of(context).platform),
+            darkTheme: AppThemeData.darkThemeData
+                .copyWith(platform: ApplicationOptions.of(context).platform),
             home: GaragePage(),
             routes: {
               '/loan': (BuildContext contenxt) => LoanPage(),
@@ -105,7 +105,7 @@ class GarageApp extends StatelessWidget {
               LocaleNamesLocalizationsDelegate()
             ],
             supportedLocales: AutolayoutLocalizations.supportedLocales,
-            locale: AutolayoutOptions.of(context).locale,
+            locale: ApplicationOptions.of(context).locale,
             localeResolutionCallback: (locale, supportedLocales) {
               deviceLocale = locale;
               return locale;

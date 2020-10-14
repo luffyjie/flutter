@@ -26,8 +26,8 @@ set deviceLocale(Locale locale) {
   _deviceLocale ??= locale;
 }
 
-class AutolayoutOptions {
-  const AutolayoutOptions({
+class ApplicationOptions {
+  const ApplicationOptions({
     this.themeMode,
     double textScaleFactor,
     this.customtextDirection,
@@ -91,7 +91,7 @@ class AutolayoutOptions {
     return overlayStyle;
   }
 
-  AutolayoutOptions copyWith({
+  ApplicationOptions copyWith({
     ThemeMode themeMode,
     double textScaleFactor,
     CustomtextDirection customtextDirection,
@@ -99,7 +99,7 @@ class AutolayoutOptions {
     double timeDilation,
     TargetPlatform platform,
   }) {
-    return AutolayoutOptions(
+    return ApplicationOptions(
       themeMode: themeMode ?? this.themeMode,
       textScaleFactor: textScaleFactor ?? _textScaleFactor,
       customtextDirection: customtextDirection ?? this.customtextDirection,
@@ -109,13 +109,13 @@ class AutolayoutOptions {
     );
   }
 
-  static AutolayoutOptions of(BuildContext context) {
+  static ApplicationOptions of(BuildContext context) {
     final scope =
         context.dependOnInheritedWidgetOfExactType<_ModelBindingScope>();
     return scope.modelBindingState.currentModel;
   }
 
-  static void update(BuildContext context, AutolayoutOptions newModel) {
+  static void update(BuildContext context, ApplicationOptions newModel) {
     final scope =
         context.dependOnInheritedWidgetOfExactType<_ModelBindingScope>();
     scope.modelBindingState.updateModel(newModel);
@@ -129,7 +129,7 @@ class ApplyTextOptions extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final options = AutolayoutOptions.of(context);
+    final options = ApplicationOptions.of(context);
     final textDirection = options.resolvedTextDirection();
     final textScaleFactor = options.textScaleFactor(context);
 
@@ -166,12 +166,12 @@ class _ModelBindingScope extends InheritedWidget {
 class ModelBinding extends StatefulWidget {
   ModelBinding({
     Key key,
-    this.initialModel = const AutolayoutOptions(),
+    this.initialModel = const ApplicationOptions(),
     this.child,
   })  : assert(initialModel != null),
         super(key: key);
 
-  final AutolayoutOptions initialModel;
+  final ApplicationOptions initialModel;
   final Widget child;
 
   @override
@@ -179,7 +179,7 @@ class ModelBinding extends StatefulWidget {
 }
 
 class _ModelBindingState extends State<ModelBinding> {
-  AutolayoutOptions currentModel;
+  ApplicationOptions currentModel;
   Timer _timeDilationTime;
 
   @override
@@ -195,7 +195,7 @@ class _ModelBindingState extends State<ModelBinding> {
     super.dispose();
   }
 
-  void handleTimeDilation(AutolayoutOptions newModel) {
+  void handleTimeDilation(ApplicationOptions newModel) {
     if (currentModel.timeDilation != newModel.timeDilation) {
       _timeDilationTime?.cancel();
       _timeDilationTime = null;
@@ -209,7 +209,7 @@ class _ModelBindingState extends State<ModelBinding> {
     }
   }
 
-  void updateModel(AutolayoutOptions newModel) {
+  void updateModel(ApplicationOptions newModel) {
     if (newModel != currentModel) {
       handleTimeDilation(newModel);
       setState(() {

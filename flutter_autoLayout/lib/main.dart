@@ -2,11 +2,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:fluro/fluro.dart' as fluro;
+import 'package:flutter_autoLayout/public.dart';
 import 'package:flutter_autoLayout/garage/garage_app.dart';
-import 'package:flutter_autoLayout/route/routes.dart';
+import 'package:flutter_autoLayout/routes.dart';
 import 'package:flutter_autoLayout/themes/theme_data.dart';
 import 'package:flutter_localized_locales/flutter_localized_locales.dart';
-import 'public.dart';
+import 'package:oktoast/oktoast.dart';
 
 void main() {
   runApp(App());
@@ -27,7 +28,7 @@ class _AppState extends State<App> {
   @override
   Widget build(Object context) {
     return ModelBinding(
-      initialModel: AutolayoutOptions(
+      initialModel: ApplicationOptions(
         themeMode: ThemeMode.system,
         textScaleFactor: systemTextScaleFactorOption,
         customtextDirection: CustomtextDirection.localeBased,
@@ -37,29 +38,31 @@ class _AppState extends State<App> {
       ),
       child: Builder(
         builder: (context) {
-          return MaterialApp(
-            title: "Flutter_AutoLayout",
-            debugShowCheckedModeBanner: false,
-            themeMode: AutolayoutOptions.of(context).themeMode,
-            theme: AutolayoutThemeData.lightThemeData
-                .copyWith(platform: AutolayoutOptions.of(context).platform),
-            darkTheme: AutolayoutThemeData.darkThemeData
-                .copyWith(platform: AutolayoutOptions.of(context).platform),
-            localizationsDelegates: const [
-              ...AutolayoutLocalizations.localizationsDelegates,
-              LocaleNamesLocalizationsDelegate()
-            ],
-            supportedLocales: AutolayoutLocalizations.supportedLocales,
-            locale: AutolayoutOptions.of(context).locale,
-            localeResolutionCallback: (locale, supportedLocales) {
-              deviceLocale = locale;
-              return locale;
-            },
-            routes: {
-              '/garage': (BuildContext context) => GarageApp(),
-            },
-            initialRoute: '/launch',
-            onGenerateRoute: Application.router.generator,
+          return OKToast(
+            child: MaterialApp(
+              title: "Flutter_AutoLayout",
+              debugShowCheckedModeBanner: false,
+              themeMode: ApplicationOptions.of(context).themeMode,
+              theme: AppThemeData.lightThemeData
+                  .copyWith(platform: ApplicationOptions.of(context).platform),
+              darkTheme: AppThemeData.darkThemeData
+                  .copyWith(platform: ApplicationOptions.of(context).platform),
+              localizationsDelegates: const [
+                ...AutolayoutLocalizations.localizationsDelegates,
+                LocaleNamesLocalizationsDelegate()
+              ],
+              supportedLocales: AutolayoutLocalizations.supportedLocales,
+              locale: ApplicationOptions.of(context).locale,
+              localeResolutionCallback: (locale, supportedLocales) {
+                deviceLocale = locale;
+                return locale;
+              },
+              routes: {
+                '/garage': (BuildContext context) => GarageApp(),
+              },
+              initialRoute: '/launch',
+              onGenerateRoute: Application.router.generator,
+            ),
           );
         },
       ),
