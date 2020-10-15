@@ -17,6 +17,7 @@ export 'package:flutter_autoLayout/route/routes.dart';
 // baisc
 export 'package:flutter_autoLayout/basic/basic_model.dart';
 export 'package:flutter_autoLayout/basic/view_state.dart';
+export 'package:flutter_autoLayout/basic/view_state_widget.dart';
 
 //network
 export 'package:flutter_autoLayout/network/service_helper.dart';

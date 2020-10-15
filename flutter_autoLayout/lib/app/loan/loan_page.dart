@@ -46,23 +46,31 @@ class _LoanPageState extends State<LoanPage> {
 
   @override
   Widget build(BuildContext context) {
-    return BaseView<LoanViewModel>(
-      onModelReady: (model) async {
-        await model.loanList();
-      },
-      model: LoanViewModel(),
-      builder: (context, model, child) => Scaffold(
-        appBar: AppBar(
-          title: Text('Loan'),
-        ),
-        body: model.isBusy ? _loading() : _buildBody(context, model),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Loan'),
       ),
-    );
-  }
-
-  Widget _loading() {
-    return Center(
-      child: Text('Loding'),
+      body: BaseView<LoanViewModel>(
+        onModelReady: (model) {
+          model.loanList();
+        },
+        model: LoanViewModel(),
+        builder: (context, model, child) {
+          if (model.isBusy) {
+            return ViewStateBusyWidget();
+          }
+          if (model.isIdle) {
+            return ViewStateErrorWidget(
+              title: "ss",
+              message: "lkajsdjajdaldjal",
+              buttonText: "Reload",
+              image: 'service_error',
+              onPressed: model.loanList,
+            );
+          }
+          return _buildBody(context, model);
+        },
+      ),
     );
   }
 
@@ -70,7 +78,7 @@ class _LoanPageState extends State<LoanPage> {
     return SafeArea(
       child: Column(
         children: [
-          Text(model.data.isSuccess ? 'success' : 'error'),
+          Text(model.data != null ? 'success' : 'error'),
           SizedBox(
             height: 25,
             width: 19,

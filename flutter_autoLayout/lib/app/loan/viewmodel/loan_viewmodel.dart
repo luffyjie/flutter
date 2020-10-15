@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:flutter_autoLayout/public.dart';
 
 class LoanViewModel extends BaseModel {
