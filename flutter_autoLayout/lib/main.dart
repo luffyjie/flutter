@@ -2,8 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:fluro/fluro.dart' as fluro;
+import 'package:flutter/services.dart';
 import 'package:flutter_autoLayout/public.dart';
-import 'package:flutter_autoLayout/garage/garage_app.dart';
 import 'package:flutter_autoLayout/route/routes.dart';
 import 'package:flutter_autoLayout/themes/theme_data.dart';
 import 'package:flutter_localized_locales/flutter_localized_locales.dart';
@@ -11,6 +11,11 @@ import 'package:oktoast/oktoast.dart';
 
 void main() {
   runApp(App());
+  SystemChrome.setSystemUIOverlayStyle(
+    SystemUiOverlayStyle(
+        statusBarColor: Colors.transparent,
+        statusBarBrightness: Brightness.light),
+  );
 }
 
 class App extends StatefulWidget {
@@ -56,9 +61,6 @@ class _AppState extends State<App> {
               localeResolutionCallback: (locale, supportedLocales) {
                 deviceLocale = locale;
                 return locale;
-              },
-              routes: {
-                '/garage': (BuildContext context) => GarageApp(),
               },
               initialRoute: Routes.launch,
               onGenerateRoute: Application.router.generator,

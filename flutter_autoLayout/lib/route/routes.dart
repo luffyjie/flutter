@@ -1,3 +1,5 @@
+import 'package:flutter_autoLayout/app/message/message_page.dart';
+import 'package:flutter_autoLayout/app/user/uer_page.dart';
 import 'package:flutter_autoLayout/public.dart';
 import 'package:fluro/fluro.dart' as fluro;
 import 'package:flutter_autoLayout/route/laon_route.dart';
@@ -29,6 +31,8 @@ class Routes {
   static String launch = '/launch';
   static String home = "/home";
   static String discover = '/discover';
+  static String me = '/me';
+  static String message = '/message';
 
   static void configureRouters(fluro.Router router) {
     router.notFoundHandler = fluro.Handler(handlerFunc:
@@ -40,19 +44,15 @@ class Routes {
     router.define(launch, handler: launchRoutehandler);
     router.define(tab, handler: tabRouteHandler);
     router.define(home, handler: homeRoutehandler);
+    router.define(message, handler: messsageRoutehandler);
     router.define(discover, handler: discoverRoutehandler);
+    router.define(me, handler: meRoutehandler);
 
     // module register
     UserRouter().initRouter(router);
     LoanRouter().initRouter(router);
   }
 }
-
-// Handler
-var rootHandler = fluro.Handler(
-    handlerFunc: (BuildContext context, Map<String, List<String>> parameters) {
-  return TabNavigator();
-});
 
 var launchRoutehandler = fluro.Handler(
     handlerFunc: (BuildContext context, Map<String, List<String>> parameters) {
@@ -69,7 +69,17 @@ var homeRoutehandler = fluro.Handler(
   return HomePage();
 });
 
+var messsageRoutehandler = fluro.Handler(
+    handlerFunc: (BuildContext context, Map<String, List<String>> parameters) {
+  return MessagePage();
+});
+
 var discoverRoutehandler = fluro.Handler(
     handlerFunc: (BuildContext context, Map<String, List<String>> parameters) {
   return DiscoverPage();
+});
+
+var meRoutehandler = fluro.Handler(
+    handlerFunc: (BuildContext context, Map<String, List<String>> parameters) {
+  return UserPage();
 });

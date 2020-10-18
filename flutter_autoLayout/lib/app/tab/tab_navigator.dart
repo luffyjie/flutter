@@ -1,4 +1,5 @@
 import 'package:flutter_autoLayout/app/discover/discover_page.dart';
+import 'package:flutter_autoLayout/app/message/message_page.dart';
 import 'package:flutter_autoLayout/app/user/uer_page.dart';
 import 'package:flutter_autoLayout/public.dart';
 import 'package:flutter_autoLayout/app/home/home_page.dart';
@@ -6,6 +7,7 @@ import 'package:flutter_autoLayout/app/home/home_page.dart';
 List<Widget> pages = <Widget>[
   HomePage(),
   DiscoverPage(),
+  MessagePage(),
   UserPage(),
 ];
 
@@ -51,15 +53,19 @@ class _TabNavigatorState extends State<TabNavigator> {
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
-            label: 'home',
+            label: AutolayoutLocalizations.of(context).home,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.group_work),
-            label: 'discover',
+            label: AutolayoutLocalizations.of(context).discovery,
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.group_work),
+            label: AutolayoutLocalizations.of(context).message,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.insert_emoticon),
-            label: 'me',
+            label: AutolayoutLocalizations.of(context).me,
           ),
         ],
         currentIndex: _selectedIndex,

@@ -10,7 +10,7 @@ class _SettingPageState extends State<SettingPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(AutolayoutLocalizations.of(context).demoBottomAppBarTitle),
+        title: Text(AutolayoutLocalizations.of(context).setting),
       ),
       body: Center(
         child: Container(

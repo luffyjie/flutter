@@ -12,7 +12,6 @@ class _LaunchPageState extends State<LaunchPage> with TickerProviderStateMixin {
 
   @override
   void initState() {
-    print('Launch Start');
     _countdownController = AnimationController(
       value: 0,
       vsync: this,
@@ -32,52 +31,43 @@ class _LaunchPageState extends State<LaunchPage> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Center(
-            child: Text(
-              'Launch Page',
-              style: TextStyle(
-                color: Colors.red,
-                fontSize: 32.0,
-                fontWeight: FontWeight.bold,
+      body: WillPopScope(
+        onWillPop: () => Future.value(false),
+        child: Stack(
+          fit: StackFit.expand,
+          alignment: Alignment.center,
+          children: [
+            Positioned(
+              right: 10,
+              top: 10,
+              child: SafeArea(
+                child: InkWell(
+                  onTap: () {
+                    _nextPage(context);
+                  },
+                  child: Container(
+                    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(40),
+                      color: Colors.black.withAlpha(100),
+                    ),
+                    child: AnimatedCountdown(
+                      context: context,
+                      animation: StepTween(begin: 9, end: 0)
+                          .animate(_countdownController),
+                    ),
+                  ),
+                ),
               ),
             ),
-          ),
-          SizedBox(height: 20),
-          InkWell(
-            onTap: () {
-              _nextPage(context);
-            },
-            child: Container(
-              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-              margin: EdgeInsets.only(right: 20, bottom: 20),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(40),
-                color: Colors.black.withAlpha(100),
-              ),
-              child: AnimatedCountdown(
-                context: context,
-                animation:
-                    StepTween(begin: 3, end: 0).animate(_countdownController),
+            Positioned(
+              bottom: 20,
+              child: Image.asset(
+                ImageHelper.assertIcon('login_logo.png'),
               ),
             ),
-          ),
-          RaisedButton(
-            child: Text('Garage App'),
-            onPressed: () {
-              Navigator.pushNamed(context, '/garage');
-            },
-          ),
-          SizedBox(height: 20),
-          RaisedButton(
-            child: Text('Loan page network'),
-            onPressed: () {
-              Application.push(context, '/loan');
-            },
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
@@ -94,7 +84,7 @@ class AnimatedCountdown extends AnimatedWidget {
       : super(key: key, listenable: animation) {
     this.animation.addStatusListener((status) {
       if (status == AnimationStatus.completed) {
-        // _nextPage(context);
+        _nextPage(context);
       }
     });
   }
@@ -103,7 +93,8 @@ class AnimatedCountdown extends AnimatedWidget {
   Widget build(BuildContext context) {
     var value = animation.value + 1;
     return Text(
-      (value == 0 ? '' : '$value | ') + 'skip',
+      (value == 0 ? '' : '$value | ') +
+          AutolayoutLocalizations.of(context).launchSkip,
       style: TextStyle(color: Colors.white),
     );
   }

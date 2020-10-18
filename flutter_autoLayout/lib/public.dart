@@ -9,7 +9,8 @@ export 'package:flutter_gen/gen_l10n/autolayout_localizations.dart';
 export 'package:flutter_autoLayout/themes/application_options.dart';
 
 // constants
-export 'package:flutter_autoLayout/constants.dart';
+export 'package:flutter_autoLayout/config/constants.dart';
+export 'package:flutter_autoLayout/config/resource.dart';
 
 //route
 export 'package:flutter_autoLayout/route/routes.dart';
