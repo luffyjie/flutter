@@ -1,4 +1,4 @@
-import 'package:flutter_autoLayout/public.dart';
+import 'package:flutter_autolayout/public.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AppThemeData {
@@ -16,8 +16,8 @@ class AppThemeData {
     return ThemeData(
       colorScheme: colorScheme,
       appBarTheme: AppBarTheme(
-        textTheme: _textTheme.apply(bodyColor: colorScheme.onPrimary),
-        color: colorScheme.primary,
+        textTheme: _textTheme.apply(bodyColor: colorScheme.surface),
+        color: colorScheme.secondary,
         elevation: 0,
         iconTheme: IconThemeData(color: colorScheme.onPrimary),
         brightness: colorScheme.brightness,
@@ -53,24 +53,24 @@ class AppThemeData {
   }
 
   static const ColorScheme lightColorScheme = ColorScheme(
-    primary: Color(0xFF01A0E9),
-    primaryVariant: Color(0xFF01A0E9),
+    primary: Color(0xFF48A1EA),
+    primaryVariant: Color(0xFF48A1EA),
     secondary: Color(0xFFEDEDED),
     secondaryVariant: Color(0xFFEDEDED),
     background: Colors.white,
-    surface: Color(0xFFF2F2F2),
+    surface: Color(0xFF242424),
     onBackground: Colors.black,
     error: _lightFillColor,
     onError: _lightFillColor,
-    onSurface: Colors.black,
-    onPrimary: Colors.white,
-    onSecondary: Colors.white,
+    onSurface: Color(0xFF241E30),
+    onPrimary: _lightFillColor,
+    onSecondary: Color(0xFF241E30),
     brightness: Brightness.light,
   );
 
   static const ColorScheme darkColorScheme = ColorScheme(
-    primary: Color(0xFFFF8383),
-    primaryVariant: Color(0xFF1CDEC9),
+    primary: Color(0xFF01A0E9),
+    primaryVariant: Color(0xFF01A0E9),
     secondary: Color(0xFF4D1F7C),
     secondaryVariant: Color(0xFF451B6F),
     background: Color(0xFF241E30),
@@ -87,9 +87,18 @@ class AppThemeData {
   static const _regular = FontWeight.w400;
   static const _medium = FontWeight.w500;
   static const _semiBold = FontWeight.w600;
+  static const _bold = FontWeight.w700;
 
   static final TextTheme _textTheme = TextTheme(
-      button: GoogleFonts.montserrat(fontWeight: _semiBold, fontSize: 14),
-      subtitle1: GoogleFonts.montserrat(fontWeight: _medium, fontSize: 16.0),
-      bodyText1: GoogleFonts.montserrat(fontWeight: _regular, fontSize: 14.0));
+    headline4: GoogleFonts.montserrat(fontWeight: _bold, fontSize: 20.0),
+    caption: GoogleFonts.oswald(fontWeight: _semiBold, fontSize: 16.0),
+    headline5: GoogleFonts.oswald(fontWeight: _medium, fontSize: 16.0),
+    subtitle1: GoogleFonts.montserrat(fontWeight: _medium, fontSize: 16.0),
+    overline: GoogleFonts.montserrat(fontWeight: _medium, fontSize: 12.0),
+    bodyText1: GoogleFonts.montserrat(fontWeight: _regular, fontSize: 14.0),
+    subtitle2: GoogleFonts.montserrat(fontWeight: _medium, fontSize: 14.0),
+    bodyText2: GoogleFonts.montserrat(fontWeight: _regular, fontSize: 16.0),
+    headline6: GoogleFonts.montserrat(fontWeight: _bold, fontSize: 16.0),
+    button: GoogleFonts.montserrat(fontWeight: _semiBold, fontSize: 14.0),
+  );
 }

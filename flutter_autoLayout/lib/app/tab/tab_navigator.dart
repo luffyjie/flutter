@@ -1,8 +1,8 @@
-import 'package:flutter_autoLayout/app/discover/discover_page.dart';
-import 'package:flutter_autoLayout/app/message/message_page.dart';
-import 'package:flutter_autoLayout/app/user/uer_page.dart';
-import 'package:flutter_autoLayout/public.dart';
-import 'package:flutter_autoLayout/app/home/home_page.dart';
+import 'package:flutter_autolayout/app/discover/discover_page.dart';
+import 'package:flutter_autolayout/app/message/message_page.dart';
+import 'package:flutter_autolayout/app/user/uer_page.dart';
+import 'package:flutter_autolayout/public.dart';
+import 'package:flutter_autolayout/app/home/home_page.dart';
 
 List<Widget> pages = <Widget>[
   HomePage(),

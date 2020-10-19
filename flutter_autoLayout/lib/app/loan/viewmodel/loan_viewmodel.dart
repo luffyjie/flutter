@@ -1,4 +1,4 @@
-import 'package:flutter_autoLayout/public.dart';
+import 'package:flutter_autolayout/public.dart';
 
 class LoanViewModel extends BaseModel {
   final _listPath = "/api/v1/loan/repayLoanList";

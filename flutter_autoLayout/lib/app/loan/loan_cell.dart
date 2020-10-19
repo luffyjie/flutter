@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_autoLayout/public.dart';
+import 'package:flutter_autolayout/public.dart';
 
 class LoanCellPage extends StatelessWidget {
   final String iconName;

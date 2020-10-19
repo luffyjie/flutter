@@ -1,14 +1,14 @@
-import 'package:flutter_autoLayout/app/message/message_page.dart';
-import 'package:flutter_autoLayout/app/user/uer_page.dart';
-import 'package:flutter_autoLayout/public.dart';
+import 'package:flutter_autolayout/app/message/message_page.dart';
+import 'package:flutter_autolayout/app/user/uer_page.dart';
+import 'package:flutter_autolayout/public.dart';
 import 'package:fluro/fluro.dart' as fluro;
-import 'package:flutter_autoLayout/route/laon_route.dart';
-import 'package:flutter_autoLayout/route/user_route.dart';
-import 'package:flutter_autoLayout/app/discover/discover_page.dart';
-import 'package:flutter_autoLayout/app/home/home_page.dart';
-import 'package:flutter_autoLayout/app/launch/launch_page.dart';
-import 'package:flutter_autoLayout/app/tab/tab_navigator.dart';
-import 'package:flutter_autoLayout/layout/not_found_page.dart';
+import 'package:flutter_autolayout/route/laon_route.dart';
+import 'package:flutter_autolayout/route/user_route.dart';
+import 'package:flutter_autolayout/app/discover/discover_page.dart';
+import 'package:flutter_autolayout/app/home/home_page.dart';
+import 'package:flutter_autolayout/app/launch/launch_page.dart';
+import 'package:flutter_autolayout/app/tab/tab_navigator.dart';
+import 'package:flutter_autolayout/layout/not_found_page.dart';
 
 class Application {
   static fluro.Router router;

@@ -1,7 +1,7 @@
 import 'package:fluro/fluro.dart' as fluro;
-import 'package:flutter_autoLayout/public.dart';
-import 'package:flutter_autoLayout/app/user/setting/setting_page.dart';
-import 'package:flutter_autoLayout/app/user/uer_page.dart';
+import 'package:flutter_autolayout/public.dart';
+import 'package:flutter_autolayout/app/user/setting/setting_page.dart';
+import 'package:flutter_autolayout/app/user/uer_page.dart';
 
 class UserRouter implements RouterProtocol {
   static String user = 'user';

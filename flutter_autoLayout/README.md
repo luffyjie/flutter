@@ -1,4 +1,4 @@
-# flutter_autoLayout
+# flutter_autolayout
 
 A new Flutter project.
 

@@ -3,9 +3,9 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:fluro/fluro.dart' as fluro;
 import 'package:flutter/services.dart';
-import 'package:flutter_autoLayout/public.dart';
-import 'package:flutter_autoLayout/route/routes.dart';
-import 'package:flutter_autoLayout/themes/theme_data.dart';
+import 'package:flutter_autolayout/public.dart';
+import 'package:flutter_autolayout/route/routes.dart';
+import 'package:flutter_autolayout/themes/theme_data.dart';
 import 'package:flutter_localized_locales/flutter_localized_locales.dart';
 import 'package:oktoast/oktoast.dart';
 
@@ -45,7 +45,7 @@ class _AppState extends State<App> {
         builder: (context) {
           return OKToast(
             child: MaterialApp(
-              title: "Flutter_AutoLayout",
+              title: "flutter_autolayout",
               debugShowCheckedModeBanner: false,
               themeMode: ApplicationOptions.of(context).themeMode,
               theme: AppThemeData.lightThemeData

@@ -1,4 +1,4 @@
-import 'package:flutter_autoLayout/public.dart';
+import 'package:flutter_autolayout/public.dart';
 
 class HomePage extends StatefulWidget {
   @override

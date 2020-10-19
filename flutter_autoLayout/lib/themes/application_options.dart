@@ -1,4 +1,4 @@
-import 'package:flutter_autoLayout/public.dart';
+import 'package:flutter_autolayout/public.dart';
 import 'dart:async';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/scheduler.dart' show timeDilation;

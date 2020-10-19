@@ -1,6 +1,6 @@
 import 'package:fluro/fluro.dart' as fluro;
-import 'package:flutter_autoLayout/app/loan/loan_page.dart';
-import 'package:flutter_autoLayout/public.dart';
+import 'package:flutter_autolayout/app/loan/loan_page.dart';
+import 'package:flutter_autolayout/public.dart';
 
 class LoanRouter implements RouterProtocol {
   static String loan = 'loan';

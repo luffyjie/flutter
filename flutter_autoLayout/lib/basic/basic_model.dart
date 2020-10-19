@@ -1,4 +1,4 @@
-import 'package:flutter_autoLayout/public.dart';
+import 'package:flutter_autolayout/public.dart';
 
 class BaseModel extends ChangeNotifier {
   bool disposed = false;

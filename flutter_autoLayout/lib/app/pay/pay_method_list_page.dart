@@ -1,4 +1,4 @@
-import 'package:flutter_autoLayout/public.dart';
+import 'package:flutter_autolayout/public.dart';
 import 'package:flutter/cupertino.dart';
 
 class PayMethodListPage extends StatelessWidget {

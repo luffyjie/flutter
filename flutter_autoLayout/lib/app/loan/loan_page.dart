@@ -1,6 +1,6 @@
-import 'package:flutter_autoLayout/app/loan/viewmodel/loan_viewmodel.dart';
-import 'package:flutter_autoLayout/basic/basic_view.dart';
-import 'package:flutter_autoLayout/public.dart';
+import 'package:flutter_autolayout/app/loan/viewmodel/loan_viewmodel.dart';
+import 'package:flutter_autolayout/basic/basic_view.dart';
+import 'package:flutter_autolayout/public.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 
 import 'loan_cell.dart';
