@@ -1,7 +1,6 @@
 import 'package:flutter_autolayout/public.dart';
 
 class LoanViewModel extends BaseModel {
-  final _listPath = "/api/v1/loan/repayLoanList";
   final _initConfig = '/api/v1/init/initConfig';
 
   Result data;

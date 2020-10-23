@@ -5,27 +5,63 @@
   },
   "message": "Message",
   "@message": {
-    "description": "tab home."
+    "description": "tab message."
   },
   "discovery": "Discovery",
   "@discovery": {
-    "description": "tab home."
+    "description": "tab discovery."
   },
   "me": "Me",
   "@me": {
-    "description": "tab home."
+    "description": "tab me."
   },
   "setting": "Setting",
   "@setting": {
-    "description": "tab home."
+    "description": "Stetting page"
   },
   "retry": "Retry",
   "@retry": {
-    "description": "tab home."
+    "description": "network error button."
   },
   "launchSkip": "Skip",
   "@launchSkip": {
-    "description": "tab home."
+    "description": "launch skip button."
+  },
+  "language": "Language",
+  "@language": {
+    "description": "language setup"
+  },
+  "font": "Font",
+  "@font": {
+    "description": "font setup"
+  },
+  "theme": "Theme",
+  "@theme": {
+    "description": "theme setup"
+  },
+  "darkMode": "Theme",
+  "@darkMode": {
+    "description": "darkMode setup"
+  },
+  "update": "Update",
+  "@update": {
+    "description": "update setup"
+  },
+  "enLanguag": "English",
+  "@enLanguag": {
+    "description": "English language"
+  },
+  "cnLanguag": "Chinese",
+  "@cnLanguag": {
+    "description": "cn language"
+  },
+  "hkLanguag": "Chinese, Traditional(HongKong)",
+  "@hkLanguag": {
+    "description": "hk language"
+  },
+  "twLanguag": "Chinese, Traditional",
+  "@twLanguag": {
+    "description": "tw language"
   },
   "rallyBillAmount": "{billName} bill due {date} for {amount}.",
   "@rallyBillAmount": {

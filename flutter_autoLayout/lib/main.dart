@@ -32,29 +32,39 @@ class _AppState extends State<App> {
 
   @override
   Widget build(Object context) {
-    return ModelBinding(
-      initialModel: ApplicationOptions(
-        themeMode: ThemeMode.system,
-        textScaleFactor: systemTextScaleFactorOption,
-        customtextDirection: CustomtextDirection.localeBased,
-        locale: null,
-        timeDilation: timeDilation,
-        platform: defaultTargetPlatform,
-      ),
-      child: Builder(
-        builder: (context) {
-          return OKToast(
-            child: MaterialApp(
-              title: "flutter_autolayout",
+    return OKToast(
+      child: ModelBinding(
+        initialModel: ApplicationOptions(
+          themeMode: ThemeMode.system,
+          textScaleFactor: systemTextScaleFactorOption,
+          customtextDirection: CustomtextDirection.localeBased,
+          locale: null,
+          timeDilation: timeDilation,
+          platform: defaultTargetPlatform,
+          textTheme: Styles.textTheme,
+          themeColor: Colors.orange,
+        ),
+        child: Builder(
+          builder: (context) {
+            return MaterialApp(
+              title: "autolayout",
               debugShowCheckedModeBanner: false,
               themeMode: ApplicationOptions.of(context).themeMode,
-              theme: AppThemeData.lightThemeData
-                  .copyWith(platform: ApplicationOptions.of(context).platform),
-              darkTheme: AppThemeData.darkThemeData
-                  .copyWith(platform: ApplicationOptions.of(context).platform),
+              theme: AppThemeData.themeData(
+                Styles.lightColorScheme,
+                ApplicationOptions.of(context).themeColor,
+                ApplicationOptions.of(context).platform,
+                ApplicationOptions.of(context).textTheme,
+              ),
+              darkTheme: AppThemeData.themeData(
+                Styles.darkColorScheme,
+                ApplicationOptions.of(context).themeColor,
+                ApplicationOptions.of(context).platform,
+                ApplicationOptions.of(context).textTheme,
+              ),
               localizationsDelegates: const [
                 ...AutolayoutLocalizations.localizationsDelegates,
-                LocaleNamesLocalizationsDelegate()
+                LocaleNamesLocalizationsDelegate(),
               ],
               supportedLocales: AutolayoutLocalizations.supportedLocales,
               locale: ApplicationOptions.of(context).locale,
@@ -64,9 +74,9 @@ class _AppState extends State<App> {
               },
               initialRoute: Routes.launch,
               onGenerateRoute: Application.router.generator,
-            ),
-          );
-        },
+            );
+          },
+        ),
       ),
     );
   }

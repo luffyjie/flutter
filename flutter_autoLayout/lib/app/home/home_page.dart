@@ -15,7 +15,10 @@ class _HomePageState extends State<HomePage> {
       ),
       body: Center(
         child: Container(
-          child: Text('home'),
+          child: Text(
+            'home',
+            style: TextStyle(fontFamily: 'kuaile'),
+          ),
         ),
       ),
     );

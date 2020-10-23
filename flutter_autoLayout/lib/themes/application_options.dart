@@ -6,6 +6,13 @@ import 'package:flutter/services.dart' show SystemUiOverlayStyle;
 
 /// Globale consitant
 
+const List<String> supportLanguages = <String>[
+  'enLanguag',
+  'cnLanguag',
+  'hkLanguag',
+  'twLanguag',
+];
+
 enum CustomtextDirection {
   localeBased,
   ltr,
@@ -18,6 +25,11 @@ const List<String> rtlLanguages = <String>[
   'he',
   'ps',
   'ur',
+];
+
+const fontValueList = [
+  'system',
+  'kuaile',
 ];
 
 Locale _deviceLocale;
@@ -34,6 +46,8 @@ class ApplicationOptions {
     Locale locale,
     this.timeDilation,
     this.platform,
+    this.textTheme,
+    this.themeColor,
   })  : _textScaleFactor = textScaleFactor,
         _locale = locale;
 
@@ -43,6 +57,8 @@ class ApplicationOptions {
   final CustomtextDirection customtextDirection;
   final Locale _locale;
   final TargetPlatform platform;
+  final TextTheme textTheme;
+  final Color themeColor;
 
   double textScaleFactor(BuildContext context, {bool useSentinel = false}) {
     if (_textScaleFactor == systemTextScaleFactorOption) {
@@ -98,6 +114,8 @@ class ApplicationOptions {
     Locale locale,
     double timeDilation,
     TargetPlatform platform,
+    TextTheme textTheme,
+    Color themeColor,
   }) {
     return ApplicationOptions(
       themeMode: themeMode ?? this.themeMode,
@@ -106,6 +124,8 @@ class ApplicationOptions {
       locale: locale ?? this.locale,
       timeDilation: timeDilation ?? this.timeDilation,
       platform: platform ?? this.platform,
+      textTheme: textTheme ?? this.textTheme,
+      themeColor: themeColor ?? this.themeColor,
     );
   }
 
@@ -119,6 +139,21 @@ class ApplicationOptions {
     final scope =
         context.dependOnInheritedWidgetOfExactType<_ModelBindingScope>();
     scope.modelBindingState.updateModel(newModel);
+  }
+
+  static String localName(index, BuildContext context) {
+    switch (index) {
+      case 0:
+        return AutolayoutLocalizations.of(context).enLanguag;
+      case 0:
+        return AutolayoutLocalizations.of(context).cnLanguag;
+      case 0:
+        return AutolayoutLocalizations.of(context).hkLanguag;
+      case 0:
+        return AutolayoutLocalizations.of(context).twLanguag;
+      default:
+        return '';
+    }
   }
 }
 

@@ -50,6 +50,11 @@ class _TabNavigatorState extends State<TabNavigator> {
       ),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
+        unselectedIconTheme: IconThemeData(
+          color: Theme.of(context).colorScheme.onBackground,
+        ),
+        unselectedItemColor: Theme.of(context).colorScheme.onBackground,
+        selectedItemColor: Theme.of(context).colorScheme.primary,
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
@@ -60,7 +65,7 @@ class _TabNavigatorState extends State<TabNavigator> {
             label: AutolayoutLocalizations.of(context).discovery,
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.group_work),
+            icon: Icon(Icons.message),
             label: AutolayoutLocalizations.of(context).message,
           ),
           BottomNavigationBarItem(

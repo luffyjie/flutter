@@ -55,3 +55,8 @@ flutter:
 
   generate: true
   uses-material-design: true
+  
+  fonts:
+    - family: kuaile
+      fonts:
+        - asset: assets/fonts/ZCOOLKuaiLe-Regular.ttf
